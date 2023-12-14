@@ -1,0 +1,29 @@
+{
+  "name": "kaf",
+  "version": "1.0.0",
+  "description": "前端基础架构",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "publish:lerna": "lerna publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Graceji/kaf.git"
+  },
+  "keywords": [
+    "前端",
+    "基础架构"
+  ],
+  "author": "Graceji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Graceji/kaf/issues"
+  },
+  "homepage": "https://github.com/Graceji/kaf#readme",
+  "devDependencies": {
+    "lerna": "^5.1.8",
+    "rollup": "^4.9.0"
+  }
+}

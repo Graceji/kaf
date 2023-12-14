@@ -1,6 +1,6 @@
 {
   "name": "@kaf/model",
-  "version": "0.1.0-alpha.0",
+  "version": "0.2.0-alpha.0",
   "description": "> TODO: description",
   "author": "Graceji <jina@af.local>",
   "homepage": "https://github.com/Graceji/kaf/tree/main/packages/model#readme",
@@ -25,5 +25,6 @@
   },
   "bugs": {
     "url": "https://github.com/Graceji/kaf/issues"
-  }
+  },
+  "gitHead": "eb988966a3f67863d61c4b20ea3db40dbf743429"
 }
