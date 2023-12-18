@@ -1,0 +1,7 @@
+lib/
+dist/
+types/
+storage/
+.api/
+.temp/
+.cache/

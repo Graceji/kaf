@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/Graceji/kaf/issues"
   },
+  "dependencies": {
+    "@kaf/core": "^0.2.1-alpha.0"
+  },
   "gitHead": "eb988966a3f67863d61c4b20ea3db40dbf743429"
 }

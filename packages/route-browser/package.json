@@ -1,11 +1,11 @@
 {
-  "name": "@kaf/react-redux",
+  "name": "@kaf/route-browser",
   "version": "0.2.0-alpha.0",
   "description": "> TODO: description",
   "author": "Graceji <jina@af.local>",
-  "homepage": "https://github.com/Graceji/kaf/tree/main/packages/react-redux#readme",
+  "homepage": "https://github.com/Graceji/kaf/tree/main/packages/route-browser#readme",
   "license": "MIT",
-  "main": "lib/react-redux.js",
+  "main": "lib/route-browser.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -22,11 +22,6 @@
   },
   "bugs": {
     "url": "https://github.com/Graceji/kaf/issues"
-  },
-  "peerDependencies": {
-    "react": "^16.8.0 || ^17 || ^18",
-    "react-dom": "^16.8.0 || ^17 || ^18",
-    "react-redux": "^7 || ^8"
   },
   "dependencies": {
     "@kaf/core": "^0.2.1-alpha.0"

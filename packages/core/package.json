@@ -5,13 +5,16 @@
   "author": "Graceji <jina@af.local>",
   "homepage": "https://github.com/Graceji/kaf/tree/main/packages/core#readme",
   "license": "MIT",
-  "main": "lib/core.js",
+  "main": "lib/es5/index.js",
+  "module": "lib/es6/index.js",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
   },
   "files": [
-    "lib"
+    "runtime/",
+    "types/",
+    "lib/"
   ],
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
@@ -21,8 +24,14 @@
     "url": "git+https://github.com/Graceji/kaf.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1",
-    "ts": "tsc --init"
+    "test": "jest",
+    "eslint": "cross-env NODE_ENV=production eslint --fix --cache **/*.{js,ts}",
+    "build:types": "rm -rf ./types && tsc --build ./",
+    "build:es6": "cross-env NODE_TAG=es6 babel ./src --out-dir ./lib/es6  --extensions \".ts\"",
+    "build:es5": "cross-env NODE_TAG=es5 babel ./src --out-dir ./lib/es5  --extensions \".ts\"",
+    "package:es6": "cross-env NODE_TAG=es6 rollup -c",
+    "package:es5": "cross-env NODE_TAG=es5 rollup -c",
+    "build": "yarn build:types && rimraf ./lib && yarn package:es6 && yarn package:es5"
   },
   "bugs": {
     "url": "https://github.com/Graceji/kaf/issues"

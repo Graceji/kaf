@@ -23,6 +23,24 @@
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
+  "externals": {
+    "@kaf/core": true,
+    "react": true,
+    "react-dom": true,
+    "react-redux": true,
+    "@kaf/react-web/server": true
+  },
+  "peerDependencies": {
+    "react": "^16.8.0 || ^17 || ^18",
+    "react-dom": "^16.8.0 || ^17 || ^18"
+  },
+  "dependencies": {
+    "@kaf/app": "^0.2.1-alpha.0",
+    "@kaf/core": "^0.2.1-alpha.0",
+    "@kaf/react-components": "^0.2.1-alpha.0",
+    "@kaf/react-redux": "^0.2.0-alpha.0",
+    "@kaf/route-browser": "^0.2.0-alpha.0"
+  },
   "bugs": {
     "url": "https://github.com/Graceji/kaf/issues"
   },
