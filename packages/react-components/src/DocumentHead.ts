@@ -1,4 +1,4 @@
-import {coreConfig} from '@elux/core';
+import {coreConfig} from '@kaf/core';
 import {FC, memo, useMemo} from 'react';
 
 /**
@@ -40,7 +40,7 @@ const Component: FC<DocumentHeadProps> = ({title, html}) => {
   return null;
 };
 
-Component.displayName = 'EluxDocumentHead';
+Component.displayName = 'KAFDocumentHead';
 
 /**
  * 内置UI组件

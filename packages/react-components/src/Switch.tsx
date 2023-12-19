@@ -41,4 +41,4 @@ export const Switch: FC<SwitchProps> = ({children, elseView}) => {
   return <>{elseView}</>;
 };
 
-Switch.displayName = 'EluxSwitch';
+Switch.displayName = 'KAFSwitch';

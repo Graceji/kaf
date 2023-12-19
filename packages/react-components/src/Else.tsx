@@ -41,4 +41,4 @@ export const Else: FC<ElseProps> = ({children, elseView}) => {
   return <>{elseView}</>;
 };
 
-Else.displayName = 'EluxElse';
+Else.displayName = 'KAFElse';

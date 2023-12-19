@@ -21,10 +21,10 @@ yarn create elux
 ? 请选择UI框架 React [8P]
 ? 请选择CSS预处理器 Less [4P]
 ? 请选择模板 (Use arrow keys)
-❯ Admin-react（路由前置） 
-  H5-react（路由前置） 
-  Admin-react（路由后置） 
-  H5-react（路由后置） . 
+❯ Admin-react（路由前置）
+  H5-react（路由前置）
+  Admin-react（路由后置）
+  H5-react（路由后置） .
 ```
 
 ## 或直接找到Git地址Clone
@@ -58,12 +58,12 @@ Cli工程模版制作可能稍滞后于Git项目本身，另外对于优质的�
 - 选择一个`elux组合包`，当作普通npm依赖安装：
 
   ```bash
-  yarn add @elux/react-web
+  yarn add @kaf/react-web
   ```
 
   根据平台和UI框架不同，目前推出5种组合包，它们基本保持一致的API：
 
-  - [@elux/react-web](/api/react-web.html)
+  - [@kaf/react-web](/api/react-web.html)
   - [@elux/react-taro](/api/react-taro.html)
   - [@elux/vue-web](/api/vue-web.html)
   - [@elux/vue-taro](/api/vue-taro.html)

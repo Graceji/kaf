@@ -1,12 +1,12 @@
 import {
   ActionHandler,
   ActionHandlersMap,
-  AsyncEluxComponent,
+  AsyncKAFComponent,
   CommonModel,
   CommonModule,
   coreConfig,
-  EluxComponent,
-  isEluxComponent,
+  KAFComponent,
+  isKAFComponent,
   MetaData,
   ModelAsHandlers,
   ModuleApiMap,
@@ -52,14 +52,14 @@ export function getModule(moduleName: string): Promise<CommonModule> | CommonMod
   return moduleOrPromise;
 }
 
-export function getComponent(moduleName: string, componentName: string): EluxComponent | Promise<EluxComponent> {
+export function getComponent(moduleName: string, componentName: string): KAFComponent | Promise<KAFComponent> {
   const key = [moduleName, componentName].join(coreConfig.NSP);
   if (MetaData.componentCaches[key]) {
     return MetaData.componentCaches[key]!;
   }
   const moduleCallback = (module: CommonModule) => {
-    const componentOrFun = module.components[componentName] as EluxComponent | AsyncEluxComponent;
-    if (isEluxComponent(componentOrFun)) {
+    const componentOrFun = module.components[componentName] as KAFComponent | AsyncKAFComponent;
+    if (isKAFComponent(componentOrFun)) {
       MetaData.componentCaches[key] = componentOrFun;
       return componentOrFun;
     }
@@ -83,8 +83,8 @@ export function getComponent(moduleName: string, componentName: string): EluxCom
   return moduleCallback(moduleOrPromise);
 }
 
-export function getEntryComponent(): EluxComponent {
-  return getComponent(coreConfig.StageModuleName, coreConfig.StageViewName) as EluxComponent;
+export function getEntryComponent(): KAFComponent {
+  return getComponent(coreConfig.StageModuleName, coreConfig.StageViewName) as KAFComponent;
 }
 
 export function getModuleApiMap(data?: Record<string, string[]>): ModuleApiMap {
@@ -171,9 +171,9 @@ export function injectModule(moduleOrName: string | CommonModule, moduleGetter?:
   }
 }
 
-export function injectComponent(moduleName: string, componentName: string, store: VStore): EluxComponent | Promise<EluxComponent> {
+export function injectComponent(moduleName: string, componentName: string, store: VStore): KAFComponent | Promise<KAFComponent> {
   return promiseCaseCallback(getComponent(moduleName, componentName), (component) => {
-    if (component.__elux_component__ === 'view' && !env.isServer) {
+    if (component.__kaf_component__ === 'view' && !env.isServer) {
       return promiseCaseCallback(store.mount(moduleName, 'update'), () => component);
     }
     return component;

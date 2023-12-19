@@ -1,4 +1,4 @@
-import {Dispatch, EluxComponent, exportView, setCoreConfig} from '@elux/core';
+import {Dispatch, KAFComponent, exportView, setCoreConfig} from '@kaf/core';
 import {ComponentClass, ComponentType, FunctionComponent} from 'react';
 import {connect, Options, Provider, useStore} from 'react-redux';
 
@@ -16,7 +16,7 @@ export type GetProps<C> = C extends FunctionComponent<infer P> ? P : C extends C
  */
 export type InferableComponentEnhancerWithProps<TInjectedProps> = <C>(
   component: C
-) => EluxComponent & ComponentType<Omit<GetProps<C>, keyof TInjectedProps>>;
+) => KAFComponent & ComponentType<Omit<GetProps<C>, keyof TInjectedProps>>;
 
 /**
  * 连接store与react组件

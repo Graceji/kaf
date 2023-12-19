@@ -17,7 +17,7 @@ Elux没有挂载任何全局变量，获取Store请使用`useStore()`，获取St
 
 ```ts
 // src/modules/article/views/Main.tsx
-import {connectStore} from '@elux/vue-web';
+import {connectStore} from '@kaf/vue-web';
 import {APPState, useStore, useRouter} from '@/Global';
 import {defineComponent} from 'vue';
 
@@ -54,4 +54,3 @@ export default exportView(Component);
 ## 内置组件
 
 框架中内置了4个常用的React组件，参见[内置组件](/guide/basics/view.html#内置组件)
-  

@@ -385,5 +385,5 @@ export function modelHotReplacement(moduleName: string, ModelClass: CommonModelC
       (page.store as Store).hotReplaceModel(moduleName, ModelClass);
     });
   }
-  env.console.log(`[HMR] @Elux Updated model: ${moduleName}`);
+  env.console.log(`[HMR] @KAF Updated model: ${moduleName}`);
 }

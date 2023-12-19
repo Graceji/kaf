@@ -1,28 +1,28 @@
-import {env, IAppRender} from '@elux/core';
-import {EluxContextComponent, reactComponentsConfig} from './base';
+import {env, IAppRender} from '@kaf/core';
+import {KAFContextComponent, reactComponentsConfig} from './base';
 import {RouterComponent} from './Router';
 
 const AppRender: IAppRender = {
-  toDocument(id, eluxContext, fromSSR, app): void {
+  toDocument(id, KAFContext, fromSSR, app): void {
     const renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     const panel = env.document!.getElementById(id);
     renderFun!(
-      <EluxContextComponent.Provider value={eluxContext}>
+      <KAFContextComponent.Provider value={KAFContext}>
         <RouterComponent />
-      </EluxContextComponent.Provider>,
+      </KAFContextComponent.Provider>,
       panel
     );
   },
-  toString(id, eluxContext, app): Promise<string> {
+  toString(id, KAFContext, app): Promise<string> {
     const html = reactComponentsConfig.renderToString!(
-      <EluxContextComponent.Provider value={eluxContext}>
+      <KAFContextComponent.Provider value={KAFContext}>
         <RouterComponent />
-      </EluxContextComponent.Provider>
+      </KAFContextComponent.Provider>
     );
     return Promise.resolve(html);
   },
-  toProvider(eluxContext, app): Elux.Component<{children: any}> {
-    return (props) => <EluxContextComponent.Provider value={eluxContext}>{props.children}</EluxContextComponent.Provider>;
+  toProvider(KAFContext, app): KAF.Component<{children: any}> {
+    return (props) => <KAFContextComponent.Provider value={KAFContext}>{props.children}</KAFContextComponent.Provider>;
   },
 };
 

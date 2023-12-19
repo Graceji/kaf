@@ -113,10 +113,10 @@ Router的创建与销毁由框架自动完成，无需干预。
 - Url转换为Location：
 
   ```ts
-  import {urlToLocation} from '@elux/react-web';
+  import {urlToLocation} from '@kaf/react-web';
 
   const location = urlToLocation('/article/list?currentPage=1&pageSize=10&__c=dialog#summary', {aaa: 111});
- 
+
   /* location值为：
   {
     url: '/article/list?currentPage=1&pageSize=10',
@@ -134,7 +134,7 @@ Router的创建与销毁由框架自动完成，无需干预。
 - Location转换为Url，只需提供部分路由信息即可：
 
   ```ts
-  import {locationToUrl} from '@elux/react-web';
+  import {locationToUrl} from '@kaf/react-web';
 
   const url = locationToUrl({
     pathname: '/article/list',
@@ -258,13 +258,13 @@ router.push({pathname: '/article/list', searchQuery: {currentPage: '1'}}, 'windo
 
 路由跳转流程大致如下：
 
-1. `store.dispatch({type: 'stage._testRouteChange'})`向Store派发一个`准备跳转`的Action。  
+1. `store.dispatch({type: 'stage._testRouteChange'})`向Store派发一个`准备跳转`的Action。
    可以使用effect监听该Action，并决定是否阻止(在effect中抛出一个错误可阻止)。
-2. `store.dispatch({type: 'stage._beforeRouteChange'})`向Store派发一个`跳转前`的Action。  
+2. `store.dispatch({type: 'stage._beforeRouteChange'})`向Store派发一个`跳转前`的Action。
    可以使用effect监听该Action，在跳转前保存某些有用的数据，如未提交的表单等。
 3. 创建一个新的空Store，并触发根模块`Model.onMount()`钩子。
 4. 通知原生路由系统（非必需，也可以不通知）。
-5. `store.dispatch({type: 'stage._afterRouteChange'})`向Store派发一个`跳转后`的Action。  
+5. `store.dispatch({type: 'stage._afterRouteChange'})`向Store派发一个`跳转后`的Action。
    可以使用effect监听该Action，例如获取新的路由信息注入ModuleState中。
 
 ### 路由前置与后置
@@ -329,7 +329,7 @@ export interface RouteRuntime<TStoreState extends StoreState = StoreState> {
 ```ts
 //state可以传递callback
 router.push({
-  pathname: '/article/list', 
+  pathname: '/article/list',
   searchQuery: {currentPage: '1'},
   state: ()=>console.log('callback'),
 });
@@ -372,7 +372,7 @@ Elux中的`虚拟Window`其实就是一个实现了`KeepAlive`的历史快照，
 //获取指定栈中的记录条数
 getHistoryLength(target): number;
 //获取指定栈中的记录
-getHistory(target?: RouteTarget): IRouteRecord[]; 
+getHistory(target?: RouteTarget): IRouteRecord[];
 //用`唯一key`来查找某条路由记录，如果没找到则返回 `{overflow: true}`
 findRecordByKey(key: string): {record: IRouteRecord; overflow: boolean; index: [number, number]};
 //用`回退步数`来查找某条路由历史记录，如果步数溢出则返回 `{overflow: true}`

@@ -2,13 +2,13 @@ import {moduleLoadingAction} from './actions';
 import {
   Action,
   ActionHandler,
-  AsyncEluxComponent,
+  AsyncKAFComponent,
   CommonModel,
   CommonModelClass,
   CommonModule,
   coreConfig,
-  EluxComponent,
-  isEluxComponent,
+  KAFComponent,
+  isKAFComponent,
   IStore,
   MetaData,
   ModuleState,
@@ -20,28 +20,28 @@ import {TaskCounter} from './utils';
  * 向外导出UI组件
  *
  * @returns
- * 返回实现 EluxComponent 接口的UI组件
+ * 返回实现 KAFComponent 接口的UI组件
  *
  * @public
  */
-export function exportComponent<T>(component: T): T & EluxComponent {
-  const eluxComponent: EluxComponent & T = component as any;
-  eluxComponent.__elux_component__ = 'component';
-  return eluxComponent;
+export function exportComponent<T>(component: T): T & KAFComponent {
+  const KAFComponent: KAFComponent & T = component as any;
+  KAFComponent.__kaf_component__ = 'component';
+  return KAFComponent;
 }
 
 /**
  * 向外导出业务视图
  *
  * @returns
- * 返回实现 EluxComponent 接口的业务视图
+ * 返回实现 KAFComponent 接口的业务视图
  *
  * @public
  */
-export function exportView<T>(component: T): T & EluxComponent {
-  const eluxComponent: EluxComponent & T = component as any;
-  eluxComponent.__elux_component__ = 'view';
-  return eluxComponent;
+export function exportView<T>(component: T): T & KAFComponent {
+  const KAFComponent: KAFComponent & T = component as any;
+  KAFComponent.__kaf_component__ = 'view';
+  return KAFComponent;
 }
 
 /**
@@ -77,22 +77,22 @@ export class EmptyModel implements CommonModel {
 export function exportModuleFacade(
   moduleName: string,
   ModelClass: CommonModelClass,
-  components: {[componentName: string]: EluxComponent | AsyncEluxComponent},
+  components: {[componentName: string]: KAFComponent | AsyncKAFComponent},
   data?: any
 ): CommonModule {
   Object.keys(components).forEach((key) => {
     const component = components[key];
     if (
-      !isEluxComponent(component) &&
+      !isKAFComponent(component) &&
       (typeof component !== 'function' || component.length > 0 || !/(import|require)\s*\(/.test(component.toString()))
     ) {
-      env.console.warn(`The exported component must implement interface EluxComponent: ${moduleName}.${key}`);
+      env.console.warn(`The exported component must implement interface KAFComponent: ${moduleName}.${key}`);
     }
   });
   return {
     moduleName,
     ModelClass,
-    components: components as {[componentName: string]: EluxComponent},
+    components: components as {[componentName: string]: KAFComponent},
     data,
     state: {},
     actions: {},

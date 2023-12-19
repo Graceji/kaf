@@ -1,8 +1,8 @@
 {
-  "name": "@elux/route-mp",
+  "name": "@kaf/route-mp",
   "version": "2.6.3",
-  "description": "Using @elux/route in mini-program",
-  "repository": "https://github.com/hiisea/elux/tree/master/packages/route-mp",
+  "description": "Using @kaf/route in mini-program",
+  "repository": "https://github.com/Graceji/kaf/tree/main/packages/route-mp",
   "author": "hiisea <hiisea@qq.com>",
   "license": "MIT",
   "publishConfig": {
@@ -26,7 +26,7 @@
     "build": "yarn build:types && rimraf ./dist && yarn build:es6 && yarn build:es5"
   },
   "dependencies": {
-    "@elux/core": "^2.6.3"
+    "@kaf/core": "^2.6.3"
   },
   "gitHead": "db6eb1314ef3e6abf5b7014495f441911c4cdd28"
 }

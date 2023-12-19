@@ -1,8 +1,8 @@
 {
-  "name": "@elux/react-web",
+  "name": "@kaf/react-web",
   "version": "2.6.3",
-  "description": "The practice of elux on react-web",
-  "repository": "https://github.com/hiisea/elux/tree/master/packages/react-web",
+  "description": "The practice of kaf on react-web",
+  "repository": "https://github.com/Graceji/kaf/tree/main/packages/react-web",
   "author": "hiisea <hiisea@qq.com>",
   "license": "MIT",
   "publishConfig": {
@@ -34,22 +34,22 @@
     "build": "yarn build:types && rimraf ./dist && yarn package:es6 && yarn package:es5"
   },
   "externals": {
-    "@elux/core": true,
+    "@kaf/core": true,
     "react": true,
     "react-dom": true,
     "react-redux": true,
-    "@elux/react-web/server": true
+    "@kaf/react-web/server": true
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18",
     "react-dom": "^16.8.0 || ^17 || ^18"
   },
   "dependencies": {
-    "@elux/app": "^2.6.3",
-    "@elux/core": "^2.6.3",
-    "@elux/react-components": "^2.6.3",
-    "@elux/react-redux": "^2.6.3",
-    "@elux/route-browser": "^2.6.3"
+    "@kaf/app": "^2.6.3",
+    "@kaf/core": "^2.6.3",
+    "@kaf/react-components": "^2.6.3",
+    "@kaf/react-redux": "^2.6.3",
+    "@kaf/route-browser": "^2.6.3"
   },
   "gitHead": "db6eb1314ef3e6abf5b7014495f441911c4cdd28"
 }

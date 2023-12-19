@@ -1,4 +1,4 @@
-import {coreConfig, EluxContext, IRouter, RouterInitOptions} from './basic';
+import {coreConfig, KAFContext, IRouter, RouterInitOptions} from './basic';
 import env from './env';
 /**
  * 创建应用时Render参数
@@ -35,7 +35,7 @@ export function buildApp<INS = {}>(
   });
 }
 
-export function buildProvider<INS = {}>(ins: INS, router: IRouter): Elux.Component<{children: any}> {
+export function buildProvider<INS = {}>(ins: INS, router: IRouter): KAF.Component<{children: any}> {
   const AppRender = coreConfig.AppRender!;
   //router.init({});
   return AppRender.toProvider({router}, ins);
@@ -54,8 +54,8 @@ export function buildSSR<INS = {}>(
       return router.init(routerOptions, {}).then(() => {
         const store = router.getActivePage().store;
         store.destroy();
-        const eluxContext: EluxContext = {router};
-        return AppRender.toString(id, eluxContext, ins).then((html) => {
+        const KAFContext: KAFContext = {router};
+        return AppRender.toString(id, KAFContext, ins).then((html) => {
           const {SSRTPL, SSRDataKey} = coreConfig;
           const match = SSRTPL.match(new RegExp(`<[^<>]+id=['"]${id}['"][^<>]*>`, 'm'));
           if (match) {

@@ -1,8 +1,8 @@
-import {coreConfig, getEntryComponent, IStore} from '@elux/core';
+import {coreConfig, getEntryComponent, IStore} from '@kaf/core';
 import {FC, memo} from 'react';
 
 const Component: FC<{store: IStore}> = function ({store}) {
-  const AppView: Elux.Component = getEntryComponent() as any;
+  const AppView: KAF.Component = getEntryComponent() as any;
   const StoreProvider = coreConfig.StoreProvider!;
   return (
     <StoreProvider store={store}>
@@ -11,6 +11,6 @@ const Component: FC<{store: IStore}> = function ({store}) {
   );
 };
 
-Component.displayName = 'EluxWindow';
+Component.displayName = 'KAFWindow';
 
 export const EWindow = memo(Component);

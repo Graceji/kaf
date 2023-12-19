@@ -1,7 +1,7 @@
 import {Action, ActionError, coreConfig, Location, RouteAction} from './basic';
 import {LoadingState} from './utils';
 
-export const errorProcessed = '__eluxProcessed__';
+export const errorProcessed = '__kafProcessed__';
 
 export function isProcessedError(error: any): boolean {
   return error && !!error[errorProcessed];

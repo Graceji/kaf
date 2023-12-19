@@ -1,11 +1,11 @@
-import {buildConfigSetter, EluxContext, env, IRouter} from '@elux/core';
+import {buildConfigSetter, KAFContext, env, IRouter} from '@kaf/core';
 import {createContext, useCallback, useContext, useEffect, useRef} from 'react';
 
-export const EluxContextComponent = createContext<EluxContext>({router: null as any});
+export const KAFContextComponent = createContext<KAFContext>({router: null as any});
 
 export function UseRouter(): IRouter {
-  const eluxContext = useContext(EluxContextComponent);
-  return eluxContext.router;
+  const KAFContext = useContext(KAFContextComponent);
+  return KAFContext.router;
 }
 
 export const reactComponentsConfig: {

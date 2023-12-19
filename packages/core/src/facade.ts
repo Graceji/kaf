@@ -1,11 +1,11 @@
 import {
   Action,
-  AsyncEluxComponent,
+  AsyncKAFComponent,
   CommonModel,
   CommonModelClass,
   CommonModule,
   coreConfig,
-  EluxComponent,
+  KAFComponent,
   IRouter,
   IStore,
   mergeState,
@@ -69,7 +69,7 @@ export type PickThisActions<T> = {[K in Exclude<keyof T, 'moduleName' | 'state' 
 export type GetPromiseComponent<T> = T extends () => Promise<{default: infer R}> ? R : T;
 
 /*** @public */
-export type ReturnComponents<CS extends Record<string, EluxComponent | AsyncEluxComponent>> = {
+export type ReturnComponents<CS extends Record<string, KAFComponent | AsyncKAFComponent>> = {
   [K in keyof CS]: GetPromiseComponent<CS[K]>;
 };
 
@@ -100,7 +100,7 @@ export type GetPromiseReturn<T> = T extends Promise<infer R> ? R : T;
 export function exportModule<
   TModuleName extends string,
   TModel extends CommonModel,
-  TComponents extends {[componentName: string]: EluxComponent | AsyncEluxComponent},
+  TComponents extends {[componentName: string]: KAFComponent | AsyncKAFComponent},
   D
 >(moduleName: TModuleName, ModelClass: CommonModelClass<TModel>, components: TComponents, data?: D) {
   return exportModuleFacade(moduleName, ModelClass, components, data) as {
@@ -133,7 +133,7 @@ export function exportModule<
 export type ILoadComponent<TFacade extends Facade = {}> = <M extends keyof TFacade, V extends keyof TFacade[M]['components']>(
   moduleName: M,
   componentName: V,
-  options?: {onError?: Elux.Component<{message: string}>; onLoading?: Elux.Component<{}>}
+  options?: {onError?: KAF.Component<{message: string}>; onLoading?: KAF.Component<{}>}
 ) => TFacade[M]['components'][V];
 
 /**

@@ -154,7 +154,7 @@ export interface ModuleState {
 
 //定义本模块的业务模型
 export class Model extends BaseModel<ModuleState, APPState> {
-    
+
     //模块被挂载时，需要完成ModuleState的初始赋值
     public async onMount() {
         this.routeParams = this.getRouteParams();
@@ -167,23 +167,23 @@ export class Model extends BaseModel<ModuleState, APPState> {
           await this.dispatch(this.actions.fetchItem(itemId));
         }
     }
-    
+
     //业务动作-查询列表
     @effect()
     public async fetchList(listSearchData?: ListSearch) {}
-    
+
     //业务动作-获取详情
     @effect()
     public async fetchItem(itemId: string) {}
-    
+
     //业务动作-删除文章
     @effect()
     public async deleteItem(id: string) {}
-    
+
     //业务动作-修改文章
     @effect()
     public async updateItem(id: string) {}
-    
+
     //业务动作-创建文章
     @effect()
     public async createItem(id: string) {}
@@ -195,7 +195,7 @@ export class Model extends BaseModel<ModuleState, APPState> {
 ```ts
 //src/modules/article/index.ts
 
-import {exportModule} from '@elux/react-web';
+import {exportModule} from '@kaf/react-web';
 import {Model} from './model';
 import main from './views/Main';
 
@@ -210,7 +210,7 @@ export default exportModule('article', Model, {main});
 
   ```tsx
   import stage from '@/modules/stage';
-  
+
   export const ModuleGetter = {
      //stage为根模块，使用同步加载
      stage: () => stage,
@@ -226,7 +226,7 @@ export default exportModule('article', Model, {main});
   ```tsx
   //LoadComponent会自动初始化相关Model，并且是按需加载、懒执行的
   const Article = LoadComponent('article', 'main');
-  
+
   const Component = ({subModule})=>{
       if (subModule === 'article') {
         return <Article />;

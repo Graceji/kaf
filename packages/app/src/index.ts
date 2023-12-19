@@ -1,4 +1,4 @@
-import {getModuleApiMap, ModuleGetter, setCoreConfig, StoreLogger, StoreMiddleware} from '@elux/core';
+import {getModuleApiMap, ModuleGetter, setCoreConfig, StoreLogger, StoreMiddleware} from '@kaf/core';
 
 export {
   BaseModel,
@@ -27,19 +27,19 @@ export {
   setLoading,
   urlToLocation,
   urlToNativeUrl,
-} from '@elux/core';
+} from '@kaf/core';
 
 export type {
   Action,
   ActionCreator,
   ActionError,
   API,
-  AsyncEluxComponent,
+  AsyncKAFComponent,
   CommonModel,
   CommonModelClass,
   CommonModule,
   Dispatch,
-  EluxComponent,
+  KAFComponent,
   Facade,
   GetPromiseComponent,
   GetPromiseModule,
@@ -72,7 +72,7 @@ export type {
   StoreState,
   UNListener,
   VStore,
-} from '@elux/core';
+} from '@kaf/core';
 
 /**
  * 全局参数设置
@@ -141,7 +141,7 @@ export interface UserConfig {
    * 此设置为全局默认，LoadComponent方法中可以单独设置，参见 {@link ILoadComponent}
    *
    */
-  LoadComponentOnError?: Elux.Component<{message: string}>;
+  LoadComponentOnError?: KAF.Component<{message: string}>;
   /**
    * 定义默认视图加载中组件
    *
@@ -152,7 +152,7 @@ export interface UserConfig {
    *
    * 此设置为全局默认，LoadComponent方法中可以单独设置，参见 {@link ILoadComponent}
    */
-  LoadComponentOnLoading?: Elux.Component<{}>;
+  LoadComponentOnLoading?: KAF.Component<{}>;
   /**
    * 定义Store中间件
    */

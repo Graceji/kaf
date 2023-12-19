@@ -9,7 +9,7 @@
 
     ```ts
     // src/modules/article/index.ts
-    import {exportModule} from '@elux/react-web';
+    import {exportModule} from '@kaf/react-web';
     import {Model} from './model';
     import main from './views/Main';
 
@@ -25,11 +25,11 @@
     }>;
 
     function exportModule(
-        moduleName: string, 
-        ModelClass: CommonModelClass, 
+        moduleName: string,
+        ModelClass: CommonModelClass,
         components: {
             [componentName: string]: Component | AsyncComponent;
-        }, 
+        },
         data?: any
     ): TModule;
     ```
@@ -42,7 +42,7 @@
     // src/Project.ts
     // 该文件可以看作应用的配置文件
     import stage from '@/modules/stage';
-    
+
     // 定义模块的获取方式，同步或者异步都可以
     // 注意key名必需和模块名保持一致
     export const ModuleGetter = {

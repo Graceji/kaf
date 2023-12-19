@@ -1,10 +1,10 @@
-import {coreConfig, env, ILoadComponent, injectComponent, isPromise} from '@elux/core';
+import {coreConfig, env, ILoadComponent, injectComponent, isPromise} from '@kaf/core';
 import {forwardRef, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
-export const LoadComponentOnError: Elux.Component<{message: string}> = ({message}: {message: string}) => (
+export const LoadComponentOnError: KAF.Component<{message: string}> = ({message}: {message: string}) => (
   <div className="g-component-error">{message}</div>
 );
-export const LoadComponentOnLoading: Elux.Component = () => <div className="g-component-loading">loading...</div>;
+export const LoadComponentOnLoading: KAF.Component = () => <div className="g-component-loading">loading...</div>;
 
 export const LoadComponent: ILoadComponent<any> = (moduleName, componentName, options = {}) => {
   const OnLoading = options.onLoading || coreConfig.LoadComponentOnLoading!;
@@ -12,11 +12,11 @@ export const LoadComponent: ILoadComponent<any> = (moduleName, componentName, op
 
   const Component = forwardRef((props, ref) => {
     const activeRef = useRef(true);
-    const viewRef = useRef<Elux.Component<any> | string>(OnLoading);
+    const viewRef = useRef<KAF.Component<any> | string>(OnLoading);
     const curStore = coreConfig.UseStore!();
-    const [, setView] = useState<Elux.Component<any> | string>(viewRef.current);
+    const [, setView] = useState<KAF.Component<any> | string>(viewRef.current);
 
-    const update = useCallback((view: Elux.Component<any> | string) => {
+    const update = useCallback((view: KAF.Component<any> | string) => {
       if (activeRef.current) {
         viewRef.current = view;
       }
@@ -24,7 +24,7 @@ export const LoadComponent: ILoadComponent<any> = (moduleName, componentName, op
     }, []);
 
     useMemo(() => {
-      let SyncView: Elux.Component<any> | string = OnLoading;
+      let SyncView: KAF.Component<any> | string = OnLoading;
       try {
         const result = injectComponent(moduleName as string, componentName as string, curStore);
         if (isPromise(result)) {
@@ -66,7 +66,7 @@ export const LoadComponent: ILoadComponent<any> = (moduleName, componentName, op
     }
   });
 
-  Component.displayName = 'EluxComponentLoader';
+  Component.displayName = 'KAFComponentLoader';
 
   return Component;
 };

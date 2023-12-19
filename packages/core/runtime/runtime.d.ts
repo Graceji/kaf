@@ -1,4 +1,4 @@
-declare namespace Elux {
+declare namespace KAF {
   interface ENV {
     setTimeout: typeof setTimeout;
     clearTimeout: typeof clearTimeout;

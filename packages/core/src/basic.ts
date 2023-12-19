@@ -439,31 +439,31 @@ export interface CommonModelClass<H = CommonModel> {
 }
 
 /**
- * EluxComponent定义
+ * KAFComponent定义
  *
  * @remarks
- * EluxComponent通过 {@link exportComponent} 导出，可使用 {@link ILoadComponent} 加载
+ * KAFComponent通过 {@link exportComponent} 导出，可使用 {@link ILoadComponent} 加载
  *
  * @public
  */
-export interface EluxComponent {
-  __elux_component__: 'view' | 'component';
+export interface KAFComponent {
+  __kaf_component__: 'view' | 'component';
 }
 
 /**
- * 异步EluxComponent定义
+ * 异步KAFComponent定义
  *
  * @remarks
- * EluxComponent通过 {@link exportComponent} 导出，可使用 {@link ILoadComponent} 加载
+ * KAFComponent通过 {@link exportComponent} 导出，可使用 {@link ILoadComponent} 加载
  *
  * @public
  */
-export type AsyncEluxComponent = () => Promise<{
-  default: EluxComponent;
+export type AsyncKAFComponent = () => Promise<{
+  default: KAFComponent;
 }>;
 
-export function isEluxComponent(data: any): data is EluxComponent {
-  return data['__elux_component__'];
+export function isKAFComponent(data: any): data is KAFComponent {
+  return data['__kaf_component__'];
 }
 
 /**
@@ -474,7 +474,7 @@ export function isEluxComponent(data: any): data is EluxComponent {
 export interface CommonModule<TModuleName extends string = string> {
   moduleName: TModuleName;
   ModelClass: CommonModelClass;
-  components: {[componentName: string]: EluxComponent};
+  components: {[componentName: string]: KAFComponent};
   state: ModuleState;
   actions: ModelAsCreators;
   data?: any;
@@ -506,7 +506,7 @@ export type ModuleApiMap = Record<string, {name: string; actions: ModelAsCreator
 export const MetaData: {
   moduleApiMap: ModuleApiMap;
   moduleCaches: {[moduleName: string]: undefined | CommonModule | Promise<CommonModule>};
-  componentCaches: {[moduleNameAndComponentName: string]: undefined | EluxComponent | Promise<EluxComponent>};
+  componentCaches: {[moduleNameAndComponentName: string]: undefined | KAFComponent | Promise<KAFComponent>};
   reducersMap: ActionHandlersMap;
   effectsMap: ActionHandlersMap;
   clientRouter?: IRouter;
@@ -555,18 +555,18 @@ export type StoreLoggerInfo = {
  */
 export type StoreLogger = (info: StoreLoggerInfo) => void;
 
-export interface EluxContext {
+export interface KAFContext {
   router: IRouter;
 }
 
-export interface EluxStoreContext {
+export interface KAFStoreContext {
   store: VStore;
 }
 
 export interface IAppRender {
-  toDocument(id: string, eluxContext: EluxContext, fromSSR: boolean, app: any): void;
-  toString(id: string, eluxContext: EluxContext, app: {}): Promise<string>;
-  toProvider(eluxContext: EluxContext, app: any): Elux.Component<{children: any}>;
+  toDocument(id: string, KAFContext: KAFContext, fromSSR: boolean, app: any): void;
+  toString(id: string, KAFContext: KAFContext, app: {}): Promise<string>;
+  toProvider(KAFContext: KAFContext, app: any): KAF.Component<{children: any}>;
 }
 
 /**
@@ -586,7 +586,7 @@ export const ErrorCodes = {
   /**
    * 在路由后退时，如果步数溢出则抛出该错误
    */
-  ROUTE_BACK_OVERFLOW: 'ELUX.ROUTE_BACK_OVERFLOW',
+  ROUTE_BACK_OVERFLOW: 'KAF.ROUTE_BACK_OVERFLOW',
 };
 
 export const coreConfig: {
@@ -604,14 +604,14 @@ export const coreConfig: {
   StoreLogger: StoreLogger;
   SetPageTitle: (title: string) => void;
   Platform: 'taro' | '';
-  StoreProvider?: Elux.Component<{store: IStore; children: JSX.Element}>;
+  StoreProvider?: KAF.Component<{store: IStore; children: JSX.Element}>;
   LoadComponent?: (
     moduleName: string,
     componentName: string,
-    options: {onError: Elux.Component<{message: string}>; onLoading: Elux.Component<{}>}
-  ) => EluxComponent | Promise<EluxComponent>;
-  LoadComponentOnError?: Elux.Component<{message: string}>;
-  LoadComponentOnLoading?: Elux.Component<{}>;
+    options: {onError: KAF.Component<{message: string}>; onLoading: KAF.Component<{}>}
+  ) => KAFComponent | Promise<KAFComponent>;
+  LoadComponentOnError?: KAF.Component<{message: string}>;
+  LoadComponentOnLoading?: KAF.Component<{}>;
   UseRouter?: () => IRouter;
   UseStore?: () => VStore;
   AppRender?: IAppRender;
@@ -634,8 +634,8 @@ export const coreConfig: {
   DepthTimeOnLoading: 1,
   StageModuleName: 'stage',
   StageViewName: 'main',
-  SSRDataKey: 'eluxSSRData',
-  SSRTPL: env.isServer ? env.decodeBas64('process.env.ELUX_ENV_SSRTPL') : '',
+  SSRDataKey: 'kafSSRData',
+  SSRTPL: env.isServer ? env.decodeBas64('process.env.KAF_ENV_SSRTPL') : '',
   ModuleGetter: {},
   StoreInitState: () => ({}),
   StoreMiddlewares: [],

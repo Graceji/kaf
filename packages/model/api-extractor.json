@@ -8,7 +8,7 @@
 
   "mainEntryPointFilePath": "<projectFolder>/types/index.d.ts",
 
-  "bundledPackages": ["@elux/core", "@elux/app"],
+  "bundledPackages": ["@kaf/core", "@kaf/app"],
 
   "compiler": {
     "tsconfigFilePath": "src/tsconfig.json"

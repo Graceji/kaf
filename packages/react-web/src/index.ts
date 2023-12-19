@@ -1,19 +1,19 @@
 import {hydrate, render} from 'react-dom';
 
-import {AppConfig} from '@elux/app';
-import {buildApp, buildSSR, env, RenderOptions, RouterInitOptions} from '@elux/core';
-import {setReactComponentsConfig} from '@elux/react-components';
+import {AppConfig} from '@kaf/app';
+import {buildApp, buildSSR, env, RenderOptions, RouterInitOptions} from '@kaf/core';
+import {setReactComponentsConfig} from '@kaf/react-components';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import {renderToString} from '@elux/react-web/server';
-import {createClientRouter, createServerRouter} from '@elux/route-browser';
+import {renderToString} from '@kaf/react-web/server';
+import {createClientRouter, createServerRouter} from '@kaf/route-browser';
 
-export {DocumentHead, Else, Link, Switch} from '@elux/react-components';
-export type {DocumentHeadProps, ElseProps, LinkProps, SwitchProps} from '@elux/react-components';
+export {DocumentHead, Else, Link, Switch} from '@kaf/react-components';
+export type {DocumentHeadProps, ElseProps, LinkProps, SwitchProps} from '@kaf/react-components';
 
-export {connectRedux, connectStore, createSelectorHook, shallowEqual, useSelector} from '@elux/react-redux';
-export type {GetProps, InferableComponentEnhancerWithProps} from '@elux/react-redux';
+export {connectRedux, connectStore, createSelectorHook, shallowEqual, useSelector} from '@kaf/react-redux';
+export type {GetProps, InferableComponentEnhancerWithProps} from '@kaf/react-redux';
 
-export * from '@elux/app';
+export * from '@kaf/app';
 
 setReactComponentsConfig({
   hydrate,
@@ -24,11 +24,11 @@ setReactComponentsConfig({
 /**
  * @public
  */
-export type EluxApp = {
+export type KAFApp = {
   render(options?: RenderOptions): Promise<void>;
 };
 
-let cientSingleton: EluxApp = undefined as any;
+let cientSingleton: KAFApp = undefined as any;
 
 /**
  * 创建应用(CSR)
@@ -55,7 +55,7 @@ let cientSingleton: EluxApp = undefined as any;
  *
  * @public
  */
-export function createApp(appConfig: AppConfig): EluxApp {
+export function createApp(appConfig: AppConfig): KAFApp {
   if (cientSingleton) {
     return cientSingleton;
   }

@@ -55,7 +55,7 @@ src
   "main": "index.ts",
   "peerDependencies": {
     "@test-project/stage": "*",
-    "@elux/react-web": "*",
+    "@kaf/react-web": "*",
     "react": "*",
     "path-to-regexp": "*"
   }
@@ -238,7 +238,7 @@ app-runtime-team工程结构与`app-build-team`基本一致，稍有变动如下
     shared: {
       'react': {singleton: true, eager: true, requiredVersion: '*'},
       'react-dom': {singleton: true, eager: true, requiredVersion: '*'},
-      '@elux/react-web': {singleton: true, eager: true, requiredVersion: '*'},
+      '@kaf/react-web': {singleton: true, eager: true, requiredVersion: '*'},
     },
   },
 }
@@ -262,13 +262,13 @@ bootstrap(() => undefined);
 - 然后选择`基于Webpack5的微前端 + 微模块方案`
 
 ```text
-? 请选择:平台架构 
-  CSR: 基于浏览器渲染的Web应用 
-  SSR: 基于服务器渲染 + 浏览器渲染的同构应用 
-❯ Micro: 基于Webpack5的微前端 + 微模块方案 
-  Model: 基于模型驱动，React与Vue跨项目共用Model 
-  Taro: 基于Taro的跨平台应用（各类小程序） 
-  RN: 基于ReactNative的原生APP（开发中...） 
+? 请选择:平台架构
+  CSR: 基于浏览器渲染的Web应用
+  SSR: 基于服务器渲染 + 浏览器渲染的同构应用
+❯ Micro: 基于Webpack5的微前端 + 微模块方案
+  Model: 基于模型驱动，React与Vue跨项目共用Model
+  Taro: 基于Taro的跨平台应用（各类小程序）
+  RN: 基于ReactNative的原生APP（开发中...）
 ```
 
 > 示例为了演示方便，将各Team放在一个Monorepo工程中管理，实际中各Team是独立的工程。

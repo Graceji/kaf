@@ -1,4 +1,4 @@
-import {coreConfig, IRouteRecord, Location, RouteAction, RouteTarget, urlToNativeUrl} from '@elux/core';
+import {coreConfig, IRouteRecord, Location, RouteAction, RouteTarget, urlToNativeUrl} from '@kaf/core';
 import {FC, HTMLAttributes, MouseEvent, useCallback, useMemo, useRef} from 'react';
 
 /**
@@ -103,4 +103,4 @@ export const Link: FC<LinkProps> = ({to, cname, action, onClick, disabled, overf
   }
 };
 
-Link.displayName = 'EluxLink';
+Link.displayName = 'KAFLink';

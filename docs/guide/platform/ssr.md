@@ -35,7 +35,7 @@ Elux不仅支持SSR(服务器渲染)，更强大的是：
         },
      },
      //如果要使用SSG(Static Site Generation),在此配置生成方式
-     gen: {...} 
+     gen: {...}
    }
    ```
 
@@ -43,7 +43,7 @@ Elux不仅支持SSR(服务器渲染)，更强大的是：
 
    ```ts
    // src/server.ts
-   import {createSSR} from '@elux/react-web';
+   import {createSSR} from '@kaf/react-web';
    import {appConfig} from './Project';
 
    /**

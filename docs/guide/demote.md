@@ -76,7 +76,7 @@ Elux 最低可以兼容到 IE10，但需要特别处理：
 
 ## 需要使用Elux的es5版本
 
-默认使用的是Elux的es6版本，要使用es5版本，可以使用webpack别名：  
+默认使用的是Elux的es6版本，要使用es5版本，可以使用webpack别名：
 修改`./elux.config.js`
 
 ```js
@@ -85,7 +85,7 @@ Elux 最低可以兼容到 IE10，但需要特别处理：
 module.exports = {
   prod: {
     resolveAlias: {
-      '@elux/react-web': '@elux/react-web/dist/es5/pkg.js'
+      '@kaf/react-web': '@kaf/react-web/dist/es5/pkg.js'
     }
   }
 }

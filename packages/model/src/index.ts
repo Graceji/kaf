@@ -1,1 +1,1 @@
-export * from '@elux/app';
+export * from '@kaf/app';

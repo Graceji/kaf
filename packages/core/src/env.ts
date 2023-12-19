@@ -30,7 +30,7 @@ if (typeof self !== 'undefined') {
  *
  * @public
  */
-const env: Elux.ENV = root;
+const env: KAF.ENV = root;
 
 env.isServer = typeof window === 'undefined' && typeof global === 'object' && global.global === global;
 

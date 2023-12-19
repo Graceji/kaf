@@ -1,3 +1,3 @@
-declare module '@elux/react-web/server' {
+declare module '@kaf/react-web/server' {
   export function renderToString(component: any): string;
 }

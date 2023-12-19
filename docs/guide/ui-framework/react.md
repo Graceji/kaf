@@ -10,7 +10,7 @@ prev: /guide/basics/immutable.html
 
 ```ts
 // src/modules/article/views/Main.tsx
-import {connectStore} from '@elux/react-web';
+import {connectStore} from '@kaf/react-web';
 import {APPState, useStore, useRouter} from '@/Global';
 
 export interface StoreProps {
@@ -36,7 +36,7 @@ export default connectStore(mapStateToProps)(Component);
 ## 内置组件
 
 框架中内置了4个常用的React组件，参见[内置组件](/guide/basics/view.html#内置组件)
-  
+
 ## 暂未支持V18中的Suspense
 
 react 18中的新Suspense方案很好的解决了SSR时数据集中加载的问题，值得借鉴和使用。但Vue中尚无类似解决方案，这也极大增加了对于UI特殊功能的依赖，所以暂未支持。

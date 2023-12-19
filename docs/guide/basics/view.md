@@ -12,7 +12,7 @@ View就是一个包含具体业务逻辑的Component，View中可以直接使用
 
     ```ts
     // src/modules/article/views/Main.tsx
-    import {connectStore} from '@elux/react-web';
+    import {connectStore} from '@kaf/react-web';
     import {APPState} from '@/Global';
 
     export interface StoreProps {
@@ -74,7 +74,7 @@ View就是一个包含具体业务逻辑的Component，View中可以直接使用
 
 ```ts
 // src/modules/stage/index.ts
-import {exportModule} from '@elux/react-web';
+import {exportModule} from '@kaf/react-web';
 import {Model} from './model';
 import main from './views/Main';
 
@@ -87,7 +87,7 @@ export default exportModule('stage', Model, {main});
 
 ```ts
 // src/modules/stage/index.ts
-import {exportModule} from '@elux/react-web';
+import {exportModule} from '@kaf/react-web';
 import {Model} from './model';
 // import main from './views/Main';
 
@@ -119,10 +119,10 @@ const My = LoadComponent('my', 'main');
 
 ```ts
 type LoadComponent = (
-    moduleName: string, 
-    componentName: string, 
-    options?: {onError: Elux.Component<{message: string}>; onLoading: Elux.Component<{}>}
-  ) => EluxComponent
+    moduleName: string,
+    componentName: string,
+    options?: {onError: KAF.Component<{message: string}>; onLoading: KAF.Component<{}>}
+  ) => KAFComponent
 ```
 
 可以看到该方法还可以指定`onError`和`onLoading`，参见 [Elux全局设置](/api/react-web.setconfig.html)
@@ -188,4 +188,3 @@ const article = GetComponent('article', 'main');
         html='<meta name="keywords" content="域名,域名推广,域名注册">'
     />
     ```
-  

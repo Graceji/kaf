@@ -1,4 +1,4 @@
-import {BaseNativeRouter, coreConfig, IRouter, Location, nativeUrlToUrl, setCoreConfig, UNListener} from '@elux/core';
+import {BaseNativeRouter, coreConfig, IRouter, Location, nativeUrlToUrl, setCoreConfig, UNListener} from '@kaf/core';
 
 setCoreConfig({NotifyNativeRouter: {window: true, page: false}});
 

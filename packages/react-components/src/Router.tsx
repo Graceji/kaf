@@ -1,4 +1,4 @@
-import {coreConfig, env, IStore, Location} from '@elux/core';
+import {coreConfig, env, IStore, Location} from '@kaf/core';
 import {FC, memo, useEffect, useRef, useState} from 'react';
 import {EWindow} from './EWindow';
 
@@ -10,7 +10,7 @@ const Component: FC = () => {
       location: Location;
       store: IStore;
     }[];
-  }>({className: 'elux-app', pages: router.getCurrentPages().reverse()});
+  }>({className: 'kaf-app', pages: router.getCurrentPages().reverse()});
   const {className, pages} = data;
   const pagesRef = useRef(pages);
   pagesRef.current = pages;
@@ -22,29 +22,29 @@ const Component: FC = () => {
       return new Promise<void>((completeCallback) => {
         if (windowChanged) {
           if (action === 'push') {
-            setData({className: 'elux-app elux-animation elux-change elux-push ' + Date.now(), pages});
+            setData({className: 'kaf-app kaf-animation kaf-change kaf-push ' + Date.now(), pages});
             env.setTimeout(() => {
-              containerRef.current!.className = 'elux-app elux-animation';
+              containerRef.current!.className = 'kaf-app kaf-animation';
             }, 100);
             env.setTimeout(() => {
-              containerRef.current!.className = 'elux-app';
+              containerRef.current!.className = 'kaf-app';
               completeCallback();
             }, 400);
           } else if (action === 'back') {
-            setData({className: 'elux-app ' + Date.now(), pages: [...pages, pagesRef.current[pagesRef.current.length - 1]]});
+            setData({className: 'kaf-app ' + Date.now(), pages: [...pages, pagesRef.current[pagesRef.current.length - 1]]});
             env.setTimeout(() => {
-              containerRef.current!.className = 'elux-app elux-animation elux-change elux-back';
+              containerRef.current!.className = 'kaf-app kaf-animation kaf-change kaf-back';
             }, 100);
             env.setTimeout(() => {
-              setData({className: 'elux-app ' + Date.now(), pages});
+              setData({className: 'kaf-app ' + Date.now(), pages});
               completeCallback();
             }, 400);
           } else if (action === 'relaunch') {
-            setData({className: 'elux-app ', pages});
+            setData({className: 'kaf-app ', pages});
             env.setTimeout(completeCallback, 50);
           }
         } else {
-          setData({className: 'elux-app', pages});
+          setData({className: 'kaf-app', pages});
           env.setTimeout(completeCallback, 50);
         }
       });
@@ -58,7 +58,7 @@ const Component: FC = () => {
           location: {url, classname},
         } = item;
         const props = {
-          className: `elux-window${classname ? ' ' + classname : ''}`,
+          className: `kaf-window${classname ? ' ' + classname : ''}`,
           key: store.uid,
           uid: store.uid,
           sid: store.sid,
@@ -79,6 +79,6 @@ const Component: FC = () => {
   );
 };
 
-Component.displayName = 'EluxRouter';
+Component.displayName = 'KAFRouter';
 
 export const RouterComponent = memo(Component);

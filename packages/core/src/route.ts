@@ -61,8 +61,8 @@ export function nativeUrlToUrl(nativeUrl: string): string {
  *
  * @public
  */
-export function urlToNativeUrl(eluxUrl: string): string {
-  const [path = '', search = '', hash = ''] = eluxUrl.split(/[?#]/);
+export function urlToNativeUrl(kafUrl: string): string {
+  const [path = '', search = '', hash = ''] = kafUrl.split(/[?#]/);
   const pathname = coreConfig.NativePathnameMapping.out('/' + path.replace(/^\/|\/$/g, ''));
   return `${pathname}${search ? `?${search}` : ''}${hash ? `#${hash}` : ''}`;
 }

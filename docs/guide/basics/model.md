@@ -35,7 +35,7 @@ export interface CommonModel {
     ```ts
     // src/modules/stage/model.ts
     import {pathToRegexp} from 'path-to-regexp';
-    import {BaseModel, ErrorCodes, LoadingState, effect, reducer} from '@elux/react-web';
+    import {BaseModel, ErrorCodes, LoadingState, effect, reducer} from '@kaf/react-web';
     import {APPState} from '@/Global';
 
     //定义本模块的状态结构
@@ -64,7 +64,7 @@ export interface CommonModel {
             const [, subModule, currentView] = pathToRegexp('/:subModule/:currentView').exec(pathname) || [];
             return {subModule, currentView} as RouteParams;
         }
-    
+
         //初始化或路由变化时都需要重新挂载Model
         //在此钩子中必需完成本模块ModuleState的初始赋值(可以异步)
         //在此钩子执行完成之前，本模块的UI将不会Render
@@ -148,7 +148,7 @@ export interface CommonModel {
 
     ```ts
     // src/modules/stage/index.ts
-    import {exportModule} from '@elux/react-web';
+    import {exportModule} from '@kaf/react-web';
     import {Model} from './model';
     import main from './views/Main';
 
@@ -211,7 +211,7 @@ export interface CommonModel {
     ```
 
 - 在View中派发Action：
-  
+
     ```ts
     import {Modules, GetActions} from '@/Global';
 
