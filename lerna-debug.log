@@ -1,19 +1,28 @@
-0 silly argv {
-0 silly argv   _: [ 'create' ],
-0 silly argv   lernaVersion: '5.1.8',
-0 silly argv   '$0': '/usr/local/bin/lerna',
-0 silly argv   name: 'react-components'
-0 silly argv }
-1 notice cli v5.1.8
-2 verbose rootPath /Users/jina/Desktop/@aim/kaf
-3 info versioning independent
-4 error Error: canceled
-4 error     at Interface.<anonymous> (/Users/jina/Desktop/@aim/kaf/node_modules/.pnpm/read@1.0.7/node_modules/read/lib/read.js:66:13)
-4 error     at Interface.emit (node:events:527:28)
-4 error     at Interface._ttyWrite (node:readline:1081:16)
-4 error     at ReadStream.onkeypress (node:readline:288:10)
-4 error     at ReadStream.emit (node:events:527:28)
-4 error     at emitKeys (node:internal/readline/utils:358:14)
-4 error     at emitKeys.next (<anonymous>)
-4 error     at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
-4 error     at ReadStream.emit (node:events:527:28)
+66 error Error: Command failed with exit code 1: git commit -F /private/var/folders/q2/l_30h6hd3lb4xdqsvlpzs1kr0000gn/T/079c4612-0374-4801-89e8-b832b2fe3b93/lerna-commit.txt
+66 error [STARTED] Preparing lint-staged...
+66 error [COMPLETED] Preparing lint-staged...
+66 error [STARTED] Running tasks for staged files...
+66 error [STARTED] package.json — 6 files
+66 error [STARTED] *.{js,jsx,ts,tsx,vue} — 0 files
+66 error [STARTED] *.{css,less} — 0 files
+66 error [STARTED] *.json — 6 files
+66 error [SKIPPED] *.{js,jsx,ts,tsx,vue} — no files
+66 error [SKIPPED] *.{css,less} — no files
+66 error [STARTED] prettier --write
+66 error [FAILED] prettier --write [FAILED]
+66 error [FAILED] prettier --write [FAILED]
+66 error [COMPLETED] Running tasks for staged files...
+66 error [STARTED] Applying modifications from tasks...
+66 error [SKIPPED] Skipped because of errors from tasks.
+66 error [STARTED] Reverting to original state because of errors...
+66 error [COMPLETED] Reverting to original state because of errors...
+66 error [STARTED] Cleaning up temporary files...
+66 error [COMPLETED] Cleaning up temporary files...
+66 error
+66 error ✖ prettier --write:
+66 error [error] Cannot find package 'prettier-plugin-organize-imports' imported from /Users/jina/Desktop/@aim/kaf/noop.js
+66 error husky - pre-commit hook exited with code 1 (error)
+66 error     at makeError (/Users/jina/Desktop/@aim/kaf/node_modules/.pnpm/execa@5.1.1/node_modules/execa/lib/error.js:60:11)
+66 error     at handlePromise (/Users/jina/Desktop/@aim/kaf/node_modules/.pnpm/execa@5.1.1/node_modules/execa/index.js:118:26)
+66 error     at processTicksAndRejections (node:internal/process/task_queues:96:5)
+66 error     at async Promise.all (index 0)

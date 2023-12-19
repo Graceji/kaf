@@ -1,6 +1,6 @@
 {
   "name": "@kaf/react-components",
-  "version": "0.2.1-alpha.0",
+  "version": "0.2.2-alpha.0",
   "description": "> TODO: description",
   "author": "Graceji <jina@af.local>",
   "homepage": "https://github.com/Graceji/kaf/tree/main/packages/react-components#readme",
@@ -27,6 +27,6 @@
     "react": "^16.8.0 || ^17 || ^18"
   },
   "dependencies": {
-    "@kaf/core": "^0.2.1-alpha.0"
+    "@kaf/core": "^0.2.2-alpha.0"
   }
 }
