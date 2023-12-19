@@ -1,6 +1,6 @@
 {
   "name": "@kaf/app",
-  "version": "2.6.5",
+  "version": "2.6.6",
   "description": "",
   "repository": "https://github.com/Graceji/kaf/tree/main/packages/app",
   "author": "Graceji",
@@ -26,7 +26,7 @@
     "build": "yarn build:types && rimraf ./dist && yarn build:es6 && yarn build:es5"
   },
   "dependencies": {
-    "@kaf/core": "^2.6.5"
+    "@kaf/core": "^2.6.6"
   },
   "gitHead": "ad2ffab42fef29ba9f2bc0c9a1a81cd08d794794"
 }

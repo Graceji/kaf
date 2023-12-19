@@ -1,6 +1,6 @@
 {
   "name": "@kaf/react-web",
-  "version": "2.6.5",
+  "version": "2.6.6",
   "description": "The practice of kaf on react-web",
   "repository": "https://github.com/Graceji/kaf/tree/main/packages/react-web",
   "author": "Graceji",
@@ -45,11 +45,11 @@
     "react-dom": "^16.8.0 || ^17 || ^18"
   },
   "dependencies": {
-    "@kaf/app": "^2.6.5",
-    "@kaf/core": "^2.6.5",
-    "@kaf/react-components": "^2.6.5",
-    "@kaf/react-redux": "^2.6.5",
-    "@kaf/route-browser": "^2.6.5"
+    "@kaf/app": "^2.6.6",
+    "@kaf/core": "^2.6.6",
+    "@kaf/react-components": "^2.6.6",
+    "@kaf/react-redux": "^2.6.6",
+    "@kaf/route-browser": "^2.6.6"
   },
   "gitHead": "ad2ffab42fef29ba9f2bc0c9a1a81cd08d794794"
 }
