@@ -1,6 +1,6 @@
 import { Action, Location, RouteAction } from './basic';
 import { LoadingState } from './utils';
-export declare const errorProcessed = "__eluxProcessed__";
+export declare const errorProcessed = "__kafProcessed__";
 export declare function isProcessedError(error: any): boolean;
 export declare function setProcessedError(error: any, processed: boolean): {
     [errorProcessed]: boolean;

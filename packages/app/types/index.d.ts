@@ -1,6 +1,6 @@
-import { ModuleGetter, StoreLogger, StoreMiddleware } from '@elux/core';
-export { BaseModel, deepMerge, effect, effectLogger, EmptyModel, env, errorAction, ErrorCodes, exportComponent, exportModule, exportView, getApi, getTplInSSR, injectModule, isServer, isMutable, locationToNativeLocation, locationToUrl, modelHotReplacement, moduleExists, nativeLocationToLocation, nativeUrlToUrl, reducer, setLoading, urlToLocation, urlToNativeUrl, } from '@elux/core';
-export type { Action, ActionCreator, ActionError, API, AsyncEluxComponent, CommonModel, CommonModelClass, CommonModule, Dispatch, EluxComponent, Facade, GetPromiseComponent, GetPromiseModule, GetState, HandlerToAction, IGetComponent, IGetData, ILoadComponent, IRouter, IRouteRecord, IStore, LoadingState, Location, ModelAsCreators, ModuleFacade, ModuleGetter, ModuleState, PickModelActions, PickThisActions, RenderOptions, ReturnComponents, RouteAction, RouteEvent, RouterInitOptions, RouteRuntime, RouteTarget, StoreLogger, StoreLoggerInfo, StoreMiddleware, StoreState, UNListener, VStore, } from '@elux/core';
+import { ModuleGetter, StoreLogger, StoreMiddleware } from '@kaf/core';
+export { BaseModel, deepMerge, effect, effectLogger, EmptyModel, env, errorAction, ErrorCodes, exportComponent, exportModule, exportView, getApi, getTplInSSR, injectModule, isServer, isMutable, locationToNativeLocation, locationToUrl, modelHotReplacement, moduleExists, nativeLocationToLocation, nativeUrlToUrl, reducer, setLoading, urlToLocation, urlToNativeUrl, } from '@kaf/core';
+export type { Action, ActionCreator, ActionError, API, AsyncKAFComponent, CommonModel, CommonModelClass, CommonModule, Dispatch, KAFComponent, Facade, GetPromiseComponent, GetPromiseModule, GetState, HandlerToAction, IGetComponent, IGetData, ILoadComponent, IRouter, IRouteRecord, IStore, LoadingState, Location, ModelAsCreators, ModuleFacade, ModuleGetter, ModuleState, PickModelActions, PickThisActions, RenderOptions, ReturnComponents, RouteAction, RouteEvent, RouterInitOptions, RouteRuntime, RouteTarget, StoreLogger, StoreLoggerInfo, StoreMiddleware, StoreState, UNListener, VStore, } from '@kaf/core';
 /**
  * 全局参数设置
  *
@@ -72,7 +72,7 @@ export interface UserConfig {
      * 此设置为全局默认，LoadComponent方法中可以单独设置，参见 {@link ILoadComponent}
      *
      */
-    LoadComponentOnError?: Elux.Component<{
+    LoadComponentOnError?: KAF.Component<{
         message: string;
     }>;
     /**
@@ -85,7 +85,7 @@ export interface UserConfig {
      *
      * 此设置为全局默认，LoadComponent方法中可以单独设置，参见 {@link ILoadComponent}
      */
-    LoadComponentOnLoading?: Elux.Component<{}>;
+    LoadComponentOnLoading?: KAF.Component<{}>;
     /**
      * 定义Store中间件
      */

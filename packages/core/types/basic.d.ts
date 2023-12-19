@@ -437,28 +437,28 @@ export interface CommonModelClass<H = CommonModel> {
     new (moduleName: string, store: IStore): H;
 }
 /**
- * EluxComponent定义
+ * KAFComponent定义
  *
  * @remarks
- * EluxComponent通过 {@link exportComponent} 导出，可使用 {@link ILoadComponent} 加载
+ * KAFComponent通过 {@link exportComponent} 导出，可使用 {@link ILoadComponent} 加载
  *
  * @public
  */
-export interface EluxComponent {
-    __elux_component__: 'view' | 'component';
+export interface KAFComponent {
+    __kaf_component__: 'view' | 'component';
 }
 /**
- * 异步EluxComponent定义
+ * 异步KAFComponent定义
  *
  * @remarks
- * EluxComponent通过 {@link exportComponent} 导出，可使用 {@link ILoadComponent} 加载
+ * KAFComponent通过 {@link exportComponent} 导出，可使用 {@link ILoadComponent} 加载
  *
  * @public
  */
-export declare type AsyncEluxComponent = () => Promise<{
-    default: EluxComponent;
+export declare type AsyncKAFComponent = () => Promise<{
+    default: KAFComponent;
 }>;
-export declare function isEluxComponent(data: any): data is EluxComponent;
+export declare function isKAFComponent(data: any): data is KAFComponent;
 /**
  * Module的基础定义
  *
@@ -468,7 +468,7 @@ export interface CommonModule<TModuleName extends string = string> {
     moduleName: TModuleName;
     ModelClass: CommonModelClass;
     components: {
-        [componentName: string]: EluxComponent;
+        [componentName: string]: KAFComponent;
     };
     state: ModuleState;
     actions: ModelAsCreators;
@@ -509,7 +509,7 @@ export declare const MetaData: {
         [moduleName: string]: undefined | CommonModule | Promise<CommonModule>;
     };
     componentCaches: {
-        [moduleNameAndComponentName: string]: undefined | EluxComponent | Promise<EluxComponent>;
+        [moduleNameAndComponentName: string]: undefined | KAFComponent | Promise<KAFComponent>;
     };
     reducersMap: ActionHandlersMap;
     effectsMap: ActionHandlersMap;
@@ -551,16 +551,16 @@ export declare type StoreLoggerInfo = {
  * @public
  */
 export declare type StoreLogger = (info: StoreLoggerInfo) => void;
-export interface EluxContext {
+export interface KAFContext {
     router: IRouter;
 }
-export interface EluxStoreContext {
+export interface KAFStoreContext {
     store: VStore;
 }
 export interface IAppRender {
-    toDocument(id: string, eluxContext: EluxContext, fromSSR: boolean, app: any): void;
-    toString(id: string, eluxContext: EluxContext, app: {}): Promise<string>;
-    toProvider(eluxContext: EluxContext, app: any): Elux.Component<{
+    toDocument(id: string, KAFContext: KAFContext, fromSSR: boolean, app: any): void;
+    toString(id: string, KAFContext: KAFContext, app: {}): Promise<string>;
+    toProvider(KAFContext: KAFContext, app: any): KAF.Component<{
         children: any;
     }>;
 }
@@ -598,20 +598,20 @@ export declare const coreConfig: {
     StoreLogger: StoreLogger;
     SetPageTitle: (title: string) => void;
     Platform: 'taro' | '';
-    StoreProvider?: Elux.Component<{
+    StoreProvider?: KAF.Component<{
         store: IStore;
         children: JSX.Element;
     }>;
     LoadComponent?: (moduleName: string, componentName: string, options: {
-        onError: Elux.Component<{
+        onError: KAF.Component<{
             message: string;
         }>;
-        onLoading: Elux.Component<{}>;
-    }) => EluxComponent | Promise<EluxComponent>;
-    LoadComponentOnError?: Elux.Component<{
+        onLoading: KAF.Component<{}>;
+    }) => KAFComponent | Promise<KAFComponent>;
+    LoadComponentOnError?: KAF.Component<{
         message: string;
     }>;
-    LoadComponentOnLoading?: Elux.Component<{}>;
+    LoadComponentOnLoading?: KAF.Component<{}>;
     UseRouter?: () => IRouter;
     UseStore?: () => VStore;
     AppRender?: IAppRender;
@@ -647,20 +647,20 @@ export declare const setCoreConfig: (config: Partial<{
     StoreLogger: StoreLogger;
     SetPageTitle: (title: string) => void;
     Platform: 'taro' | '';
-    StoreProvider?: Elux.Component<{
+    StoreProvider?: KAF.Component<{
         store: IStore;
         children: JSX.Element;
     }> | undefined;
     LoadComponent?: ((moduleName: string, componentName: string, options: {
-        onError: Elux.Component<{
+        onError: KAF.Component<{
             message: string;
         }>;
-        onLoading: Elux.Component<{}>;
-    }) => EluxComponent | Promise<EluxComponent>) | undefined;
-    LoadComponentOnError?: Elux.Component<{
+        onLoading: KAF.Component<{}>;
+    }) => KAFComponent | Promise<KAFComponent>) | undefined;
+    LoadComponentOnError?: KAF.Component<{
         message: string;
     }> | undefined;
-    LoadComponentOnLoading?: Elux.Component<{}> | undefined;
+    LoadComponentOnLoading?: KAF.Component<{}> | undefined;
     UseRouter?: (() => IRouter) | undefined;
     UseStore?: (() => VStore) | undefined;
     AppRender?: IAppRender | undefined;

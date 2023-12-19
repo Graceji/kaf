@@ -40,7 +40,7 @@ export declare function nativeUrlToUrl(nativeUrl: string): string;
  *
  * @public
  */
-export declare function urlToNativeUrl(eluxUrl: string): string;
+export declare function urlToNativeUrl(kafUrl: string): string;
 /**
  * Url转换为Location
  *

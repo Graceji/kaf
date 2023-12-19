@@ -9,6 +9,6 @@
  *
  * @public
  */
-declare const env: Elux.ENV;
+declare const env: KAF.ENV;
 export default env;
 //# sourceMappingURL=env.d.ts.map

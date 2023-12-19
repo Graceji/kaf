@@ -1,6 +1,7 @@
-import {Dispatch, KAFComponent, exportView, setCoreConfig} from '@kaf/core';
+import {Dispatch, exportView, KAFComponent, setCoreConfig} from '@kaf/core';
 import {ComponentClass, ComponentType, FunctionComponent} from 'react';
-import {connect, Options, Provider, useStore} from 'react-redux';
+import {connect, Provider, useStore} from 'react-redux';
+import type {ConnectOptions} from 'react-redux/es/components/connect';
 
 /**
  * 用于{@link connectStore }
@@ -31,7 +32,7 @@ export type InferableComponentEnhancerWithProps<TInjectedProps> = <C>(
  */
 export function connectStore<S = {}, D = {}, W = {}>(
   mapStateToProps?: (state: any, owner: W) => S,
-  options?: Options<any, S, W>
+  options?: ConnectOptions<any, S, W>
 ): InferableComponentEnhancerWithProps<S & D & {dispatch: Dispatch}> {
   return function (component: any) {
     return exportView(connect(mapStateToProps, options)(component)) as any;
@@ -49,4 +50,4 @@ export const connectRedux = connectStore;
 
 setCoreConfig({UseStore: useStore as any, StoreProvider: Provider as any});
 
-export {batch, connect, connectAdvanced, createSelectorHook, shallowEqual, useSelector} from 'react-redux';
+export {batch, connect, createSelectorHook, shallowEqual, useSelector} from 'react-redux';

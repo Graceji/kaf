@@ -1,2 +1,2 @@
-export * from '@elux/app';
+export * from '@kaf/app';
 //# sourceMappingURL=index.d.ts.map

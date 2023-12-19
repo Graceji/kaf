@@ -1,22 +1,22 @@
-import { Action, AsyncEluxComponent, CommonModel, CommonModelClass, CommonModule, EluxComponent, IStore, ModuleState } from './basic';
+import { Action, AsyncKAFComponent, CommonModel, CommonModelClass, CommonModule, KAFComponent, IStore, ModuleState } from './basic';
 /**
  * 向外导出UI组件
  *
  * @returns
- * 返回实现 EluxComponent 接口的UI组件
+ * 返回实现 KAFComponent 接口的UI组件
  *
  * @public
  */
-export declare function exportComponent<T>(component: T): T & EluxComponent;
+export declare function exportComponent<T>(component: T): T & KAFComponent;
 /**
  * 向外导出业务视图
  *
  * @returns
- * 返回实现 EluxComponent 接口的业务视图
+ * 返回实现 KAFComponent 接口的业务视图
  *
  * @public
  */
-export declare function exportView<T>(component: T): T & EluxComponent;
+export declare function exportView<T>(component: T): T & KAFComponent;
 /**
  * 空Model常用于mock假数据
  *
@@ -33,7 +33,7 @@ export declare class EmptyModel implements CommonModel {
     protected _initState(state: ModuleState): ModuleState;
 }
 export declare function exportModuleFacade(moduleName: string, ModelClass: CommonModelClass, components: {
-    [componentName: string]: EluxComponent | AsyncEluxComponent;
+    [componentName: string]: KAFComponent | AsyncKAFComponent;
 }, data?: any): CommonModule;
 /**
  * 将{@link LoadingState | LoadingState}注入指定ModuleState

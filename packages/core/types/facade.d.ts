@@ -1,4 +1,4 @@
-import { Action, AsyncEluxComponent, CommonModel, CommonModelClass, CommonModule, EluxComponent, IRouter, IStore, ModuleState, StoreState, VStore } from './basic';
+import { Action, AsyncKAFComponent, CommonModel, CommonModelClass, CommonModule, KAFComponent, IRouter, IStore, ModuleState, StoreState, VStore } from './basic';
 import { LoadingState } from './utils';
 /*** @public */
 export declare type GetPromiseModule<T> = T extends Promise<{
@@ -42,7 +42,7 @@ export declare type GetPromiseComponent<T> = T extends () => Promise<{
     default: infer R;
 }> ? R : T;
 /*** @public */
-export declare type ReturnComponents<CS extends Record<string, EluxComponent | AsyncEluxComponent>> = {
+export declare type ReturnComponents<CS extends Record<string, KAFComponent | AsyncKAFComponent>> = {
     [K in keyof CS]: GetPromiseComponent<CS[K]>;
 };
 export declare type GetPromiseReturn<T> = T extends Promise<infer R> ? R : T;
@@ -68,7 +68,7 @@ export declare type GetPromiseReturn<T> = T extends Promise<infer R> ? R : T;
  * @public
  */
 export declare function exportModule<TModuleName extends string, TModel extends CommonModel, TComponents extends {
-    [componentName: string]: EluxComponent | AsyncEluxComponent;
+    [componentName: string]: KAFComponent | AsyncKAFComponent;
 }, D>(moduleName: TModuleName, ModelClass: CommonModelClass<TModel>, components: TComponents, data?: D): {
     moduleName: TModuleName;
     ModelClass: CommonModelClass;
@@ -94,10 +94,10 @@ export declare function exportModule<TModuleName extends string, TModel extends 
  * @public
  */
 export declare type ILoadComponent<TFacade extends Facade = {}> = <M extends keyof TFacade, V extends keyof TFacade[M]['components']>(moduleName: M, componentName: V, options?: {
-    onError?: Elux.Component<{
+    onError?: KAF.Component<{
         message: string;
     }>;
-    onLoading?: Elux.Component<{}>;
+    onLoading?: KAF.Component<{}>;
 }) => TFacade[M]['components'][V];
 /**
  * 获取指定模块的UI组件

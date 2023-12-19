@@ -1,14 +1,14 @@
-import { AppConfig } from '@elux/app';
-import { RenderOptions, RouterInitOptions } from '@elux/core';
-export { DocumentHead, Else, Link, Switch } from '@elux/react-components';
-export type { DocumentHeadProps, ElseProps, LinkProps, SwitchProps } from '@elux/react-components';
-export { connectRedux, connectStore, createSelectorHook, shallowEqual, useSelector } from '@elux/react-redux';
-export type { GetProps, InferableComponentEnhancerWithProps } from '@elux/react-redux';
-export * from '@elux/app';
+import { AppConfig } from '@kaf/app';
+import { RenderOptions, RouterInitOptions } from '@kaf/core';
+export { DocumentHead, Else, Link, Switch } from '@kaf/react-components';
+export type { DocumentHeadProps, ElseProps, LinkProps, SwitchProps } from '@kaf/react-components';
+export { connectRedux, connectStore, createSelectorHook, shallowEqual, useSelector } from '@kaf/react-redux';
+export type { GetProps, InferableComponentEnhancerWithProps } from '@kaf/react-redux';
+export * from '@kaf/app';
 /**
  * @public
  */
-export declare type EluxApp = {
+export declare type KAFApp = {
     render(options?: RenderOptions): Promise<void>;
 };
 /**
@@ -36,7 +36,7 @@ export declare type EluxApp = {
  *
  * @public
  */
-export declare function createApp(appConfig: AppConfig): EluxApp;
+export declare function createApp(appConfig: AppConfig): KAFApp;
 /**
  * 创建应用(SSR)
  *

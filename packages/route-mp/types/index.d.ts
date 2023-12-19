@@ -1,4 +1,4 @@
-import { BaseNativeRouter, IRouter, Location } from '@elux/core';
+import { BaseNativeRouter, IRouter, Location } from '@kaf/core';
 interface RouteOption {
     url: string;
 }

@@ -1,5 +1,5 @@
-import { EluxContext, IRouter } from '@elux/core';
-export declare const EluxContextComponent: import("react").Context<EluxContext>;
+import { KAFContext, IRouter } from '@kaf/core';
+export declare const KAFContextComponent: import("react").Context<KAFContext>;
 export declare function UseRouter(): IRouter;
 export declare const reactComponentsConfig: {
     hydrate?: (component: any, container: any) => void;
