@@ -3,7 +3,7 @@
   "version": "2.6.5",
   "description": "Cross platform and cross framework web solutions that based on micro-module and model-driven.",
   "homepage": "https://github.com/Graceji/kaf/tree/main/packages/core",
-  "author": "hiisea <hiisea@qq.com>",
+  "author": "Graceji",
   "license": "MIT",
   "keywords": [
     "react",
@@ -38,5 +38,5 @@
     "package:es5": "cross-env NODE_TAG=es5 rollup -c",
     "build": "yarn build:types && rimraf ./dist && yarn package:es6 && yarn package:es5"
   },
-  "gitHead": "692e902b2e11db2707533bd487ff3d3a32e8f3e4"
+  "gitHead": "ad2ffab42fef29ba9f2bc0c9a1a81cd08d794794"
 }

@@ -3,7 +3,7 @@
   "version": "2.6.5",
   "description": "The practice of kaf on react",
   "repository": "https://github.com/Graceji/kaf/tree/main/packages/react-components",
-  "author": "hiisea <hiisea@qq.com>",
+  "author": "Graceji",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -31,5 +31,5 @@
   "dependencies": {
     "@kaf/core": "^2.6.5"
   },
-  "gitHead": "692e902b2e11db2707533bd487ff3d3a32e8f3e4"
+  "gitHead": "ad2ffab42fef29ba9f2bc0c9a1a81cd08d794794"
 }
