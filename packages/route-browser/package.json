@@ -1,10 +1,17 @@
 {
   "name": "@kaf/route-browser",
-  "version": "0.2.1-alpha.0",
+  "version": "0.2.2-alpha.0",
   "description": "> TODO: description",
-  "author": "Graceji <jina@af.local>",
   "homepage": "https://github.com/Graceji/kaf/tree/main/packages/route-browser#readme",
+  "bugs": {
+    "url": "https://github.com/Graceji/kaf/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Graceji/kaf.git"
+  },
   "license": "MIT",
+  "author": "Graceji <jina@af.local>",
   "main": "lib/route-browser.js",
   "directories": {
     "lib": "lib",
@@ -13,17 +20,10 @@
   "files": [
     "lib"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Graceji/kaf.git"
-  },
   "scripts": {
     "test": "echo \"Error: run tests from root\" && exit 1"
   },
-  "bugs": {
-    "url": "https://github.com/Graceji/kaf/issues"
-  },
   "dependencies": {
-    "@kaf/core": "^0.2.2-alpha.0"
+    "@kaf/core": "^0.2.3-alpha.0"
   }
 }
