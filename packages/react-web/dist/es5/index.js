@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import { buildConfigSetter, getEntryComponent, coreConfig, env, injectComponent, isPromise, urlToNativeUrl, setCoreConfig, BaseNativeRouter, exportView, getModuleApiMap, buildApp, buildSSR } from '@aimkaf/core';
 export { BaseModel, EmptyModel, ErrorCodes, deepMerge, effect, effectLogger, env, errorAction, exportComponent, exportModule, exportView, getApi, getTplInSSR, injectModule, isMutable, isServer, locationToNativeLocation, locationToUrl, modelHotReplacement, moduleExists, nativeLocationToLocation, nativeUrlToUrl, reducer, setLoading, urlToLocation, urlToNativeUrl } from '@aimkaf/core';
-import React, { createContext, useContext, memo, useState, useRef, useEffect, forwardRef, useCallback, useMemo, Children } from 'react';
+import { createContext, useContext, memo, useState, useRef, useEffect, forwardRef, useCallback, useMemo, Children } from 'react';
 import { jsx, Fragment } from 'react/jsx-runtime';
 import { renderToString } from '@aimkaf/react-web/server';
 import { connect, useStore, Provider } from 'react-redux';
@@ -155,10 +155,12 @@ var AppRender = {
   toDocument: function toDocument(id, KAFContext, fromSSR, app) {
     var renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     var panel = env.document.getElementById(id);
-    renderFun == null ? void 0 : renderFun(jsx(KAFContextComponent.Provider, {
-      value: KAFContext,
-      children: jsx(RouterComponent, {})
-    }), panel);
+    renderFun == null ? void 0 : renderFun(function () {
+      return jsx(KAFContextComponent.Provider, {
+        value: KAFContext,
+        children: jsx(RouterComponent, {})
+      });
+    }, panel);
   },
   toString: function toString(id, KAFContext, app) {
     var html = reactComponentsConfig.renderToString(jsx(KAFContextComponent.Provider, {
@@ -594,24 +596,24 @@ function patchActions(typeName, json) {
 }
 
 setReactComponentsConfig({
-  hydrate: function hydrate(element, rootElement) {
+  hydrate: function hydrate(getElement, rootElement) {
     if (ReactDOM.hydrateRoot) {
-      ReactDOM.hydrateRoot(rootElement, React.createElement(element, null));
+      ReactDOM.hydrateRoot(rootElement, getElement());
       return;
     }
 
-    ReactDOM.hydrate(rootElement, React.createElement(element, null));
+    ReactDOM.hydrate(rootElement, getElement());
   },
-  render: function render(element, rootElement) {
+  render: function render(getElement, rootElement) {
     var root;
 
     if (ReactDOM.createRoot) {
       root = ReactDOM.createRoot(rootElement);
-      root.render(React.createElement(element));
+      root.render(getElement());
       return;
     }
 
-    ReactDOM.render(element, rootElement);
+    ReactDOM.render(getElement(), rootElement);
   },
   renderToString: renderToString
 });

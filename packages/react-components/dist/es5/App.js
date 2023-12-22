@@ -6,10 +6,12 @@ var AppRender = {
   toDocument: function toDocument(id, KAFContext, fromSSR, app) {
     var renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     var panel = env.document.getElementById(id);
-    renderFun == null ? void 0 : renderFun(_jsx(KAFContextComponent.Provider, {
-      value: KAFContext,
-      children: _jsx(RouterComponent, {})
-    }), panel);
+    renderFun == null ? void 0 : renderFun(function () {
+      return _jsx(KAFContextComponent.Provider, {
+        value: KAFContext,
+        children: _jsx(RouterComponent, {})
+      });
+    }, panel);
   },
   toString: function toString(id, KAFContext, app) {
     var html = reactComponentsConfig.renderToString(_jsx(KAFContextComponent.Provider, {

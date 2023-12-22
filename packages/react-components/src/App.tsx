@@ -7,9 +7,11 @@ const AppRender: IAppRender = {
     const renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     const panel = env.document!.getElementById(id);
     renderFun?.(
-      <KAFContextComponent.Provider value={KAFContext}>
-        <RouterComponent />
-      </KAFContextComponent.Provider>,
+      () => (
+        <KAFContextComponent.Provider value={KAFContext}>
+          <RouterComponent />
+        </KAFContextComponent.Provider>
+      ),
       panel
     );
   },
