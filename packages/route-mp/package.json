@@ -1,6 +1,6 @@
 {
   "name": "@aimkaf/route-mp",
-  "version": "2.6.8",
+  "version": "0.0.0-alpha.0",
   "description": "Using @aimkaf/route in mini-program",
   "repository": "https://github.com/Graceji/kaf/tree/main/packages/route-mp",
   "author": "Graceji",
@@ -26,7 +26,7 @@
     "build": "yarn build:types && rimraf ./dist && yarn build:es6 && yarn build:es5"
   },
   "dependencies": {
-    "@aimkaf/core": "^2.6.8"
+    "@aimkaf/core": "^0.0.0-alpha.0"
   },
   "gitHead": "1236156092a91dddb54d12dfbd76d6e3620d70c5"
 }

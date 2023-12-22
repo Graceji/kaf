@@ -1,6 +1,6 @@
 {
   "name": "@aimkaf/react-components",
-  "version": "2.6.8",
+  "version": "0.0.0-alpha.0",
   "description": "The practice of kaf on react",
   "repository": "https://github.com/Graceji/kaf/tree/main/packages/react-components",
   "author": "Graceji",
@@ -29,7 +29,7 @@
     "react": "^16.8.0 || ^17 || ^18"
   },
   "dependencies": {
-    "@aimkaf/core": "^2.6.8"
+    "@aimkaf/core": "^0.0.0-alpha.0"
   },
   "gitHead": "1236156092a91dddb54d12dfbd76d6e3620d70c5"
 }

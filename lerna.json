@@ -2,14 +2,11 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "independent",
+  "useNx": false,
   "command": {
     "publish": {
       "registry": "https://registry.npmjs.org/",
       "message": "chore(release): publish %s"
-    },
-    "version": {
-      "conventionalCommits": true,
-      "createRelease": "github"
     }
   },
   "ignoreChanges": ["**/test/**", "**/*.md"]
