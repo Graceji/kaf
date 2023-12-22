@@ -1,6 +1,6 @@
 {
   "name": "@aimkaf/react-redux",
-  "version": "0.0.0-alpha.0",
+  "version": "0.1.0-alpha.0",
   "description": "The practice of kaf on react + redux",
   "repository": "https://github.com/Graceji/kaf/tree/main/packages/react-redux",
   "author": "Graceji",
@@ -31,7 +31,7 @@
     "react-redux": "^7 || ^8"
   },
   "dependencies": {
-    "@aimkaf/core": "^0.0.0-alpha.0"
+    "@aimkaf/core": "^0.1.0-alpha.0"
   },
   "gitHead": "1236156092a91dddb54d12dfbd76d6e3620d70c5"
 }
