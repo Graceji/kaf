@@ -1,7 +1,7 @@
-import { hydrate, render } from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { buildConfigSetter, getEntryComponent, coreConfig, env, injectComponent, isPromise, urlToNativeUrl, setCoreConfig, BaseNativeRouter, exportView, getModuleApiMap, buildApp, buildSSR } from '@aimkaf/core';
 export { BaseModel, EmptyModel, ErrorCodes, deepMerge, effect, effectLogger, env, errorAction, exportComponent, exportModule, exportView, getApi, getTplInSSR, injectModule, isMutable, isServer, locationToNativeLocation, locationToUrl, modelHotReplacement, moduleExists, nativeLocationToLocation, nativeUrlToUrl, reducer, setLoading, urlToLocation, urlToNativeUrl } from '@aimkaf/core';
-import { createContext, useContext, memo, useState, useRef, useEffect, forwardRef, useCallback, useMemo, Children } from 'react';
+import React, { createContext, useContext, memo, useState, useRef, useEffect, forwardRef, useCallback, useMemo, Children } from 'react';
 import { jsx, Fragment } from 'react/jsx-runtime';
 import { renderToString } from '@aimkaf/react-web/server';
 import { connect, useStore, Provider } from 'react-redux';
@@ -155,7 +155,7 @@ var AppRender = {
   toDocument: function toDocument(id, KAFContext, fromSSR, app) {
     var renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     var panel = env.document.getElementById(id);
-    renderFun(jsx(KAFContextComponent.Provider, {
+    renderFun == null ? void 0 : renderFun(jsx(KAFContextComponent.Provider, {
       value: KAFContext,
       children: jsx(RouterComponent, {})
     }), panel);
@@ -594,8 +594,25 @@ function patchActions(typeName, json) {
 }
 
 setReactComponentsConfig({
-  hydrate: hydrate,
-  render: render,
+  hydrate: function hydrate(element, rootElement) {
+    if (ReactDOM.hydrateRoot) {
+      ReactDOM.hydrateRoot(rootElement, React.createElement(element, null));
+      return;
+    }
+
+    ReactDOM.hydrate(rootElement, React.createElement(element, null));
+  },
+  render: function render(element, rootElement) {
+    var root;
+
+    if (ReactDOM.createRoot) {
+      root = ReactDOM.createRoot(rootElement);
+      root.render(React.createElement(element));
+      return;
+    }
+
+    ReactDOM.render(element, rootElement);
+  },
   renderToString: renderToString
 });
 var cientSingleton = undefined;

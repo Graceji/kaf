@@ -1,4 +1,4 @@
-import { Action, AsyncKAFComponent, CommonModel, CommonModelClass, CommonModule, KAFComponent, IRouter, IStore, ModuleState, StoreState, VStore } from './basic';
+import { Action, AsyncKAFComponent, CommonModel, CommonModelClass, CommonModule, IRouter, IStore, KAFComponent, ModuleState, StoreState, VStore } from './basic';
 import { LoadingState } from './utils';
 /*** @public */
 export declare type GetPromiseModule<T> = T extends Promise<{

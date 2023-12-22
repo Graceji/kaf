@@ -31,15 +31,17 @@
     "build": "lerna run build",
     "build:types": "lerna run build:types",
     "publish:lerna": "lerna publish",
-    "publish:next": "lerna publish --npm-tag=next",
+    "publish:next": "lerna publish --dist-tag=next",
     "publish:test": "lerna publish --registry=http://localhost:4873/ --no-git-tag-version --conventional-commits=0",
-    "publish:nopush": "lerna publish --no-push",
+    "publish:nopush": "lerna publish --no-private --no-push",
     "publish:only": "lerna publish from-package",
     "api:md": "api-documenter markdown -i ./api/.vuepress/.api -o ./api/api && node patch-api.js",
     "api:dev": "vuepress dev api",
     "api:build": "vuepress build api",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs",
+    "publish:force": "lerna version --no-private --loglevel verbose",
+    "diff": "lerna diff"
   },
   "husky": {
     "hooks": {

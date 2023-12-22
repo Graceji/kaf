@@ -57,9 +57,6 @@ function applyEffect(
   dispatch: Dispatch,
   decorators: ActionHandler['__decorators__'] = []
 ): Promise<any> {
-  // const model = this.models[moduleName];
-  // const effectResult = toPromise(handler.apply(model, actionData));
-  //const decorators = handler.__decorators__ || [];
   const decoratorBeforeResults: any[] = [];
   decorators.forEach((decorator, index) => {
     decoratorBeforeResults[index] = decorator[0].call(model, store, action, effectResult);

@@ -1,11 +1,12 @@
-import {hydrate, render} from 'react-dom';
-
+// import {hydrate, render} from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import {AppConfig} from '@aimkaf/app';
 import {buildApp, buildSSR, env, RenderOptions, RouterInitOptions} from '@aimkaf/core';
 import {setReactComponentsConfig} from '@aimkaf/react-components';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import {renderToString} from '@aimkaf/react-web/server';
 import {createClientRouter, createServerRouter} from '@aimkaf/route-browser';
+import React from 'react';
 
 export {DocumentHead, Else, Link, Switch} from '@aimkaf/react-components';
 export type {DocumentHeadProps, ElseProps, LinkProps, SwitchProps} from '@aimkaf/react-components';
@@ -16,8 +17,24 @@ export type {GetProps, InferableComponentEnhancerWithProps} from '@aimkaf/react-
 export * from '@aimkaf/app';
 
 setReactComponentsConfig({
-  hydrate,
-  render,
+  hydrate: (element: any, rootElement: Element | DocumentFragment) => {
+    // @ts-ignore
+    if (ReactDOM.hydrateRoot) {
+      ReactDOM.hydrateRoot(rootElement, React.createElement(element, null));
+      return;
+    }
+    (ReactDOM as any).hydrate(rootElement, React.createElement(element, null));
+  },
+  render: (element: any, rootElement: Element | DocumentFragment) => {
+    let root;
+    // @ts-ignore
+    if (ReactDOM.createRoot) {
+      root = ReactDOM.createRoot(rootElement);
+      root.render(React.createElement(element));
+      return;
+    }
+    (ReactDOM as any).render(element, rootElement);
+  },
   renderToString,
 });
 

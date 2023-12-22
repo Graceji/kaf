@@ -6,7 +6,7 @@ const AppRender: IAppRender = {
   toDocument(id, KAFContext, fromSSR, app): void {
     const renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     const panel = env.document!.getElementById(id);
-    renderFun!(
+    renderFun?.(
       <KAFContextComponent.Provider value={KAFContext}>
         <RouterComponent />
       </KAFContextComponent.Provider>,
