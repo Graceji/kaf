@@ -1,4 +1,4 @@
-import { IRouteRecord, Location, RouteAction, RouteTarget } from '@kaf/core';
+import { IRouteRecord, Location, RouteAction, RouteTarget } from '@aimkaf/core';
 import { FC, HTMLAttributes, MouseEvent } from 'react';
 /**
  * 内置UI组件

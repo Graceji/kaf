@@ -1,4 +1,4 @@
-import { coreConfig, env, injectComponent, isPromise } from '@elux/core';
+import { coreConfig, env, injectComponent, isPromise } from '@aimkaf/core';
 import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { jsx as _jsx } from "react/jsx-runtime";
 export const LoadComponentOnError = ({
@@ -73,6 +73,6 @@ export const LoadComponent = (moduleName, componentName, options = {}) => {
       });
     }
   });
-  Component.displayName = 'EluxComponentLoader';
+  Component.displayName = 'KAFComponentLoader';
   return Component;
 };

@@ -1,10 +1,10 @@
-import { AppConfig } from '@kaf/app';
-import { RenderOptions, RouterInitOptions } from '@kaf/core';
-export { DocumentHead, Else, Link, Switch } from '@kaf/react-components';
-export type { DocumentHeadProps, ElseProps, LinkProps, SwitchProps } from '@kaf/react-components';
-export { connectRedux, connectStore, createSelectorHook, shallowEqual, useSelector } from '@kaf/react-redux';
-export type { GetProps, InferableComponentEnhancerWithProps } from '@kaf/react-redux';
-export * from '@kaf/app';
+import { AppConfig } from '@aimkaf/app';
+import { RenderOptions, RouterInitOptions } from '@aimkaf/core';
+export { DocumentHead, Else, Link, Switch } from '@aimkaf/react-components';
+export type { DocumentHeadProps, ElseProps, LinkProps, SwitchProps } from '@aimkaf/react-components';
+export { connectRedux, connectStore, createSelectorHook, shallowEqual, useSelector } from '@aimkaf/react-redux';
+export type { GetProps, InferableComponentEnhancerWithProps } from '@aimkaf/react-redux';
+export * from '@aimkaf/app';
 /**
  * @public
  */

@@ -1,4 +1,4 @@
-import { coreConfig, getEntryComponent } from '@elux/core';
+import { coreConfig, getEntryComponent } from '@aimkaf/core';
 import { memo } from 'react';
 import { jsx as _jsx } from "react/jsx-runtime";
 
@@ -12,5 +12,5 @@ var Component = function Component(_ref) {
   });
 };
 
-Component.displayName = 'EluxWindow';
+Component.displayName = 'KAFWindow';
 export var EWindow = memo(Component);

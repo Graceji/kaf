@@ -1,1 +1,1 @@
-{"version":3,"file":"EWindow.d.ts","sourceRoot":"","sources":["../src/EWindow.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAgC,MAAM,EAAC,MAAM,WAAW,CAAC;AAehE,eAAO,MAAM,OAAO;WAZQ,MAAM;EAYI,CAAC"}
+{"version":3,"file":"EWindow.d.ts","sourceRoot":"","sources":["../src/EWindow.tsx"],"names":[],"mappings":"AAAA,OAAO,EAAgC,MAAM,EAAC,MAAM,cAAc,CAAC;AAenE,eAAO,MAAM,OAAO;WAZQ,MAAM;EAYI,CAAC"}

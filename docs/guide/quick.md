@@ -8,7 +8,7 @@
    - 创建View
    - 导出模块
 3. 引入微模块
-  
+
 ## 新建一个微模块
 
 > 假设我们想创建一个新Module:`article`
@@ -23,7 +23,7 @@
       listSearch: ListSearch; //用来记录列表搜索条件
       list?: ListItem[]; //用来记录列表
     }
-    
+
     //定义要从路由中提取的信息
     interface RouteParams {
       listSearch: ListSearch;
@@ -39,7 +39,7 @@
         const listSearch = queryString.parse(this.getRouter().location.search)
         return {listSearch};
       }
-      
+
       //module被Mount的时候会触发此钩子
       //在此钩子中必需完成ModuleState初始化，可以异步
       public onMount(): void {
@@ -76,7 +76,7 @@
 
    ```ts
     //封装并导出本模块
-    import {exportModule} from '@elux/vue-web';
+    import {exportModule} from '@aimkaf/vue-web';
     import {Model} from './model';
     import main from './views/Main';
 

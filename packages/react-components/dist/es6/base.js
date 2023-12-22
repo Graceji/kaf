@@ -1,11 +1,11 @@
-import { buildConfigSetter, env } from '@elux/core';
+import { buildConfigSetter, env } from '@aimkaf/core';
 import { createContext, useCallback, useContext, useEffect, useRef } from 'react';
-export const EluxContextComponent = createContext({
+export const KAFContextComponent = createContext({
   router: null
 });
 export function UseRouter() {
-  const eluxContext = useContext(EluxContextComponent);
-  return eluxContext.router;
+  const KAFContext = useContext(KAFContextComponent);
+  return KAFContext.router;
 }
 export const reactComponentsConfig = {
   hydrate: undefined,

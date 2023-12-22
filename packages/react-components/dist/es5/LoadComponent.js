@@ -1,5 +1,5 @@
 import _extends from "@babel/runtime/helpers/esm/extends";
-import { coreConfig, env, injectComponent, isPromise } from '@elux/core';
+import { coreConfig, env, injectComponent, isPromise } from '@aimkaf/core';
 import { forwardRef, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { jsx as _jsx } from "react/jsx-runtime";
 export var LoadComponentOnError = function LoadComponentOnError(_ref) {
@@ -83,6 +83,6 @@ export var LoadComponent = function LoadComponent(moduleName, componentName, opt
       }, props));
     }
   });
-  Component.displayName = 'EluxComponentLoader';
+  Component.displayName = 'KAFComponentLoader';
   return Component;
 };

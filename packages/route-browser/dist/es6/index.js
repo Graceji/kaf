@@ -1,4 +1,4 @@
-import { BaseNativeRouter, coreConfig, env, setCoreConfig } from '@elux/core';
+import { BaseNativeRouter, coreConfig, env, setCoreConfig } from '@aimkaf/core';
 setCoreConfig({
   NotifyNativeRouter: {
     window: true,

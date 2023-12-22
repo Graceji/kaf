@@ -64,10 +64,10 @@ Cli工程模版制作可能稍滞后于Git项目本身，另外对于优质的�
   根据平台和UI框架不同，目前推出5种组合包，它们基本保持一致的API：
 
   - [@aimkaf/react-web](/api/react-web.html)
-  - [@elux/react-taro](/api/react-taro.html)
-  - [@elux/vue-web](/api/vue-web.html)
-  - [@elux/vue-taro](/api/vue-taro.html)
-  - @elux/react-rn //开发中...
+  - [@aimkaf/react-taro](/api/react-taro.html)
+  - [@aimkaf/vue-web](/api/vue-web.html)
+  - [@aimkaf/vue-taro](/api/vue-taro.html)
+  - @aimkaf/react-rn //开发中...
 
 - 注意支持`ES6装饰器`，例如Babel配置：
 

@@ -1,18 +1,18 @@
 import { hydrate, render } from 'react-dom';
-import { buildConfigSetter, getEntryComponent, coreConfig, env, injectComponent, isPromise, urlToNativeUrl, setCoreConfig, BaseNativeRouter, exportView, getModuleApiMap, buildApp, buildSSR } from '@elux/core';
-export { BaseModel, EmptyModel, ErrorCodes, deepMerge, effect, effectLogger, env, errorAction, exportComponent, exportModule, exportView, getApi, getTplInSSR, injectModule, isMutable, isServer, locationToNativeLocation, locationToUrl, modelHotReplacement, moduleExists, nativeLocationToLocation, nativeUrlToUrl, reducer, setLoading, urlToLocation, urlToNativeUrl } from '@elux/core';
+import { buildConfigSetter, getEntryComponent, coreConfig, env, injectComponent, isPromise, urlToNativeUrl, setCoreConfig, BaseNativeRouter, exportView, getModuleApiMap, buildApp, buildSSR } from '@aimkaf/core';
+export { BaseModel, EmptyModel, ErrorCodes, deepMerge, effect, effectLogger, env, errorAction, exportComponent, exportModule, exportView, getApi, getTplInSSR, injectModule, isMutable, isServer, locationToNativeLocation, locationToUrl, modelHotReplacement, moduleExists, nativeLocationToLocation, nativeUrlToUrl, reducer, setLoading, urlToLocation, urlToNativeUrl } from '@aimkaf/core';
 import { createContext, useContext, memo, useState, useRef, useEffect, forwardRef, useCallback, useMemo, Children } from 'react';
 import { jsx, Fragment } from 'react/jsx-runtime';
-import { renderToString } from '@elux/react-web/server';
+import { renderToString } from '@aimkaf/react-web/server';
 import { connect, useStore, Provider } from 'react-redux';
 export { createSelectorHook, shallowEqual, useSelector } from 'react-redux';
 
-const EluxContextComponent = createContext({
+const KAFContextComponent = createContext({
   router: null
 });
 function UseRouter() {
-  const eluxContext = useContext(EluxContextComponent);
-  return eluxContext.router;
+  const KAFContext = useContext(KAFContextComponent);
+  return KAFContext.router;
 }
 const reactComponentsConfig = {
   hydrate: undefined,
@@ -32,13 +32,13 @@ const Component$2 = function ({
   });
 };
 
-Component$2.displayName = 'EluxWindow';
+Component$2.displayName = 'KAFWindow';
 const EWindow = memo(Component$2);
 
 const Component$1 = () => {
   const router = coreConfig.UseRouter();
   const [data, setData] = useState({
-    className: 'elux-app',
+    className: 'kaf-app',
     pages: router.getCurrentPages().reverse()
   });
   const {
@@ -58,41 +58,41 @@ const Component$1 = () => {
         if (windowChanged) {
           if (action === 'push') {
             setData({
-              className: 'elux-app elux-animation elux-change elux-push ' + Date.now(),
+              className: 'kaf-app kaf-animation kaf-change kaf-push ' + Date.now(),
               pages
             });
             env.setTimeout(() => {
-              containerRef.current.className = 'elux-app elux-animation';
+              containerRef.current.className = 'kaf-app kaf-animation';
             }, 100);
             env.setTimeout(() => {
-              containerRef.current.className = 'elux-app';
+              containerRef.current.className = 'kaf-app';
               completeCallback();
             }, 400);
           } else if (action === 'back') {
             setData({
-              className: 'elux-app ' + Date.now(),
+              className: 'kaf-app ' + Date.now(),
               pages: [...pages, pagesRef.current[pagesRef.current.length - 1]]
             });
             env.setTimeout(() => {
-              containerRef.current.className = 'elux-app elux-animation elux-change elux-back';
+              containerRef.current.className = 'kaf-app kaf-animation kaf-change kaf-back';
             }, 100);
             env.setTimeout(() => {
               setData({
-                className: 'elux-app ' + Date.now(),
+                className: 'kaf-app ' + Date.now(),
                 pages
               });
               completeCallback();
             }, 400);
           } else if (action === 'relaunch') {
             setData({
-              className: 'elux-app ',
+              className: 'kaf-app ',
               pages
             });
             env.setTimeout(completeCallback, 50);
           }
         } else {
           setData({
-            className: 'elux-app',
+            className: 'kaf-app',
             pages
           });
           env.setTimeout(completeCallback, 50);
@@ -112,7 +112,7 @@ const Component$1 = () => {
         }
       } = item;
       const props = {
-        className: `elux-window${classname ? ' ' + classname : ''}`,
+        className: `kaf-window${classname ? ' ' + classname : ''}`,
         key: store.uid,
         uid: store.uid,
         sid: store.sid,
@@ -134,30 +134,30 @@ const Component$1 = () => {
   });
 };
 
-Component$1.displayName = 'EluxRouter';
+Component$1.displayName = 'KAFRouter';
 const RouterComponent = memo(Component$1);
 
 const AppRender = {
-  toDocument(id, eluxContext, fromSSR, app) {
+  toDocument(id, KAFContext, fromSSR, app) {
     const renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     const panel = env.document.getElementById(id);
-    renderFun(jsx(EluxContextComponent.Provider, {
-      value: eluxContext,
+    renderFun(jsx(KAFContextComponent.Provider, {
+      value: KAFContext,
       children: jsx(RouterComponent, {})
     }), panel);
   },
 
-  toString(id, eluxContext, app) {
-    const html = reactComponentsConfig.renderToString(jsx(EluxContextComponent.Provider, {
-      value: eluxContext,
+  toString(id, KAFContext, app) {
+    const html = reactComponentsConfig.renderToString(jsx(KAFContextComponent.Provider, {
+      value: KAFContext,
       children: jsx(RouterComponent, {})
     }));
     return Promise.resolve(html);
   },
 
-  toProvider(eluxContext, app) {
-    return props => jsx(EluxContextComponent.Provider, {
-      value: eluxContext,
+  toProvider(KAFContext, app) {
+    return props => jsx(KAFContextComponent.Provider, {
+      value: KAFContext,
       children: props.children
     });
   }
@@ -236,7 +236,7 @@ const LoadComponent = (moduleName, componentName, options = {}) => {
       });
     }
   });
-  Component.displayName = 'EluxComponentLoader';
+  Component.displayName = 'KAFComponentLoader';
   return Component;
 };
 
@@ -262,7 +262,7 @@ const Component = ({
   return null;
 };
 
-Component.displayName = 'EluxDocumentHead';
+Component.displayName = 'KAFDocumentHead';
 const DocumentHead = memo(Component);
 
 const Else = ({
@@ -284,7 +284,7 @@ const Else = ({
     children: elseView
   });
 };
-Else.displayName = 'EluxElse';
+Else.displayName = 'KAFElse';
 
 const Switch = ({
   children,
@@ -305,7 +305,7 @@ const Switch = ({
     children: elseView
   });
 };
-Switch.displayName = 'EluxSwitch';
+Switch.displayName = 'KAFSwitch';
 
 const Link = ({
   to,
@@ -392,7 +392,7 @@ const Link = ({
     });
   }
 };
-Link.displayName = 'EluxLink';
+Link.displayName = 'KAFLink';
 
 setCoreConfig({
   UseRouter,

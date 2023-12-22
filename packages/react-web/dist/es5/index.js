@@ -1,18 +1,18 @@
 import { hydrate, render } from 'react-dom';
-import { buildConfigSetter, getEntryComponent, coreConfig, env, injectComponent, isPromise, urlToNativeUrl, setCoreConfig, BaseNativeRouter, exportView, getModuleApiMap, buildApp, buildSSR } from '@elux/core';
-export { BaseModel, EmptyModel, ErrorCodes, deepMerge, effect, effectLogger, env, errorAction, exportComponent, exportModule, exportView, getApi, getTplInSSR, injectModule, isMutable, isServer, locationToNativeLocation, locationToUrl, modelHotReplacement, moduleExists, nativeLocationToLocation, nativeUrlToUrl, reducer, setLoading, urlToLocation, urlToNativeUrl } from '@elux/core';
+import { buildConfigSetter, getEntryComponent, coreConfig, env, injectComponent, isPromise, urlToNativeUrl, setCoreConfig, BaseNativeRouter, exportView, getModuleApiMap, buildApp, buildSSR } from '@aimkaf/core';
+export { BaseModel, EmptyModel, ErrorCodes, deepMerge, effect, effectLogger, env, errorAction, exportComponent, exportModule, exportView, getApi, getTplInSSR, injectModule, isMutable, isServer, locationToNativeLocation, locationToUrl, modelHotReplacement, moduleExists, nativeLocationToLocation, nativeUrlToUrl, reducer, setLoading, urlToLocation, urlToNativeUrl } from '@aimkaf/core';
 import { createContext, useContext, memo, useState, useRef, useEffect, forwardRef, useCallback, useMemo, Children } from 'react';
 import { jsx, Fragment } from 'react/jsx-runtime';
-import { renderToString } from '@elux/react-web/server';
+import { renderToString } from '@aimkaf/react-web/server';
 import { connect, useStore, Provider } from 'react-redux';
 export { createSelectorHook, shallowEqual, useSelector } from 'react-redux';
 
-var EluxContextComponent = createContext({
+var KAFContextComponent = createContext({
   router: null
 });
 function UseRouter() {
-  var eluxContext = useContext(EluxContextComponent);
-  return eluxContext.router;
+  var KAFContext = useContext(KAFContextComponent);
+  return KAFContext.router;
 }
 var reactComponentsConfig = {
   hydrate: undefined,
@@ -22,7 +22,7 @@ var reactComponentsConfig = {
 var setReactComponentsConfig = buildConfigSetter(reactComponentsConfig);
 
 function _extends() {
-  _extends = Object.assign || function (target) {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
     for (var i = 1; i < arguments.length; i++) {
       var source = arguments[i];
 
@@ -35,7 +35,6 @@ function _extends() {
 
     return target;
   };
-
   return _extends.apply(this, arguments);
 }
 
@@ -49,14 +48,14 @@ var Component$2 = function Component(_ref) {
   });
 };
 
-Component$2.displayName = 'EluxWindow';
+Component$2.displayName = 'KAFWindow';
 var EWindow = memo(Component$2);
 
 var Component$1 = function Component() {
   var router = coreConfig.UseRouter();
 
   var _useState = useState({
-    className: 'elux-app',
+    className: 'kaf-app',
     pages: router.getCurrentPages().reverse()
   }),
       data = _useState[0],
@@ -76,41 +75,41 @@ var Component$1 = function Component() {
         if (windowChanged) {
           if (action === 'push') {
             setData({
-              className: 'elux-app elux-animation elux-change elux-push ' + Date.now(),
+              className: 'kaf-app kaf-animation kaf-change kaf-push ' + Date.now(),
               pages: pages
             });
             env.setTimeout(function () {
-              containerRef.current.className = 'elux-app elux-animation';
+              containerRef.current.className = 'kaf-app kaf-animation';
             }, 100);
             env.setTimeout(function () {
-              containerRef.current.className = 'elux-app';
+              containerRef.current.className = 'kaf-app';
               completeCallback();
             }, 400);
           } else if (action === 'back') {
             setData({
-              className: 'elux-app ' + Date.now(),
+              className: 'kaf-app ' + Date.now(),
               pages: [].concat(pages, [pagesRef.current[pagesRef.current.length - 1]])
             });
             env.setTimeout(function () {
-              containerRef.current.className = 'elux-app elux-animation elux-change elux-back';
+              containerRef.current.className = 'kaf-app kaf-animation kaf-change kaf-back';
             }, 100);
             env.setTimeout(function () {
               setData({
-                className: 'elux-app ' + Date.now(),
+                className: 'kaf-app ' + Date.now(),
                 pages: pages
               });
               completeCallback();
             }, 400);
           } else if (action === 'relaunch') {
             setData({
-              className: 'elux-app ',
+              className: 'kaf-app ',
               pages: pages
             });
             env.setTimeout(completeCallback, 50);
           }
         } else {
           setData({
-            className: 'elux-app',
+            className: 'kaf-app',
             pages: pages
           });
           env.setTimeout(completeCallback, 50);
@@ -127,7 +126,7 @@ var Component$1 = function Component() {
           url = _item$location.url,
           classname = _item$location.classname;
       var props = {
-        className: "elux-window" + (classname ? ' ' + classname : ''),
+        className: "kaf-window" + (classname ? ' ' + classname : ''),
         key: store.uid,
         uid: store.uid,
         sid: store.sid,
@@ -149,29 +148,29 @@ var Component$1 = function Component() {
   });
 };
 
-Component$1.displayName = 'EluxRouter';
+Component$1.displayName = 'KAFRouter';
 var RouterComponent = memo(Component$1);
 
 var AppRender = {
-  toDocument: function toDocument(id, eluxContext, fromSSR, app) {
+  toDocument: function toDocument(id, KAFContext, fromSSR, app) {
     var renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     var panel = env.document.getElementById(id);
-    renderFun(jsx(EluxContextComponent.Provider, {
-      value: eluxContext,
+    renderFun(jsx(KAFContextComponent.Provider, {
+      value: KAFContext,
       children: jsx(RouterComponent, {})
     }), panel);
   },
-  toString: function toString(id, eluxContext, app) {
-    var html = reactComponentsConfig.renderToString(jsx(EluxContextComponent.Provider, {
-      value: eluxContext,
+  toString: function toString(id, KAFContext, app) {
+    var html = reactComponentsConfig.renderToString(jsx(KAFContextComponent.Provider, {
+      value: KAFContext,
       children: jsx(RouterComponent, {})
     }));
     return Promise.resolve(html);
   },
-  toProvider: function toProvider(eluxContext, app) {
+  toProvider: function toProvider(KAFContext, app) {
     return function (props) {
-      return jsx(EluxContextComponent.Provider, {
-        value: eluxContext,
+      return jsx(KAFContextComponent.Provider, {
+        value: KAFContext,
         children: props.children
       });
     };
@@ -259,7 +258,7 @@ var LoadComponent = function LoadComponent(moduleName, componentName, options) {
       }, props));
     }
   });
-  Component.displayName = 'EluxComponentLoader';
+  Component.displayName = 'KAFComponentLoader';
   return Component;
 };
 
@@ -284,7 +283,7 @@ var Component = function Component(_ref) {
   return null;
 };
 
-Component.displayName = 'EluxDocumentHead';
+Component.displayName = 'KAFDocumentHead';
 var DocumentHead = memo(Component);
 
 var Else = function Else(_ref) {
@@ -305,7 +304,7 @@ var Else = function Else(_ref) {
     children: elseView
   });
 };
-Else.displayName = 'EluxElse';
+Else.displayName = 'KAFElse';
 
 var Switch = function Switch(_ref) {
   var children = _ref.children,
@@ -325,7 +324,7 @@ var Switch = function Switch(_ref) {
     children: elseView
   });
 };
-Switch.displayName = 'EluxSwitch';
+Switch.displayName = 'KAFSwitch';
 
 function _objectWithoutPropertiesLoose(source, excluded) {
   if (source == null) return {};
@@ -427,7 +426,7 @@ var Link = function Link(_ref) {
     return jsx("a", _extends({}, props));
   }
 };
-Link.displayName = 'EluxLink';
+Link.displayName = 'KAFLink';
 
 setCoreConfig({
   UseRouter: UseRouter,
@@ -438,11 +437,10 @@ setCoreConfig({
 });
 
 function _setPrototypeOf(o, p) {
-  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) {
     o.__proto__ = p;
     return o;
   };
-
   return _setPrototypeOf(o, p);
 }
 

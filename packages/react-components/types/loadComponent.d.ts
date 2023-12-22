@@ -1,4 +1,4 @@
-import { ILoadComponent } from '@kaf/core';
+import { ILoadComponent } from '@aimkaf/core';
 export declare const LoadComponentOnError: KAF.Component<{
     message: string;
 }>;

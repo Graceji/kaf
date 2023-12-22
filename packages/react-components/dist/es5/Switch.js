@@ -19,4 +19,4 @@ export var Switch = function Switch(_ref) {
     children: elseView
   });
 };
-Switch.displayName = 'EluxSwitch';
+Switch.displayName = 'KAFSwitch';

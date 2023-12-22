@@ -1,4 +1,4 @@
-import { coreConfig, urlToNativeUrl } from '@elux/core';
+import { coreConfig, urlToNativeUrl } from '@aimkaf/core';
 import { useCallback, useMemo, useRef } from 'react';
 import { jsx as _jsx } from "react/jsx-runtime";
 export const Link = ({
@@ -86,4 +86,4 @@ export const Link = ({
     });
   }
 };
-Link.displayName = 'EluxLink';
+Link.displayName = 'KAFLink';

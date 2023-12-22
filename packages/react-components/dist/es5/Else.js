@@ -19,4 +19,4 @@ export var Else = function Else(_ref) {
     children: elseView
   });
 };
-Else.displayName = 'EluxElse';
+Else.displayName = 'KAFElse';

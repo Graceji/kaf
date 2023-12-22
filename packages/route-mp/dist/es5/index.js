@@ -1,5 +1,5 @@
 import _inheritsLoose from "@babel/runtime/helpers/esm/inheritsLoose";
-import { BaseNativeRouter, coreConfig, nativeUrlToUrl, setCoreConfig } from '@elux/core';
+import { BaseNativeRouter, coreConfig, nativeUrlToUrl, setCoreConfig } from '@aimkaf/core';
 setCoreConfig({
   NotifyNativeRouter: {
     window: true,

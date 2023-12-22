@@ -207,8 +207,8 @@ function isServer() {
   return env.isServer;
 }
 
-function isEluxComponent(data) {
-  return data['__elux_component__'];
+function isKAFComponent(data) {
+  return data['__kaf_component__'];
 }
 const MetaData = {
   moduleApiMap: null,
@@ -221,7 +221,7 @@ const MetaData = {
 const ErrorCodes = {
   ROUTE_RETURN: 'ELIX.ROUTE_RETURN',
   ROUTE_REDIRECT: 'ELIX.ROUTE_REDIRECT',
-  ROUTE_BACK_OVERFLOW: 'ELUX.ROUTE_BACK_OVERFLOW'
+  ROUTE_BACK_OVERFLOW: 'KAF.ROUTE_BACK_OVERFLOW'
 };
 const coreConfig = {
   NSP: '.',
@@ -230,8 +230,8 @@ const coreConfig = {
   DepthTimeOnLoading: 1,
   StageModuleName: 'stage',
   StageViewName: 'main',
-  SSRDataKey: 'eluxSSRData',
-  SSRTPL: env.isServer ? env.decodeBas64('process.env.ELUX_ENV_SSRTPL') : '',
+  SSRDataKey: 'kafSSRData',
+  SSRTPL: env.isServer ? env.decodeBas64('process.env.KAF_ENV_SSRTPL') : '',
   ModuleGetter: {},
   StoreInitState: () => ({}),
   StoreMiddlewares: [],
@@ -277,7 +277,7 @@ function isMutable() {
   return coreConfig.MutableData;
 }
 
-const errorProcessed = '__eluxProcessed__';
+const errorProcessed = '__kafProcessed__';
 function isProcessedError(error) {
   return error && !!error[errorProcessed];
 }
@@ -393,7 +393,7 @@ function getComponent(moduleName, componentName) {
   const moduleCallback = module => {
     const componentOrFun = module.components[componentName];
 
-    if (isEluxComponent(componentOrFun)) {
+    if (isKAFComponent(componentOrFun)) {
       MetaData.componentCaches[key] = componentOrFun;
       return componentOrFun;
     }
@@ -498,7 +498,7 @@ function injectModule(moduleOrName, moduleGetter) {
 }
 function injectComponent(moduleName, componentName, store) {
   return promiseCaseCallback(getComponent(moduleName, componentName), component => {
-    if (component.__elux_component__ === 'view' && !env.isServer) {
+    if (component.__kaf_component__ === 'view' && !env.isServer) {
       return promiseCaseCallback(store.mount(moduleName, 'update'), () => component);
     }
 
@@ -576,14 +576,14 @@ function _applyDecoratedDescriptor(target, property, decorators, descriptor, con
 
 var _class$1;
 function exportComponent(component) {
-  const eluxComponent = component;
-  eluxComponent.__elux_component__ = 'component';
-  return eluxComponent;
+  const KAFComponent = component;
+  KAFComponent.__kaf_component__ = 'component';
+  return KAFComponent;
 }
 function exportView(component) {
-  const eluxComponent = component;
-  eluxComponent.__elux_component__ = 'view';
-  return eluxComponent;
+  const KAFComponent = component;
+  KAFComponent.__kaf_component__ = 'view';
+  return KAFComponent;
 }
 let EmptyModel = (_class$1 = class EmptyModel {
   get state() {
@@ -617,8 +617,8 @@ function exportModuleFacade(moduleName, ModelClass, components, data) {
   Object.keys(components).forEach(key => {
     const component = components[key];
 
-    if (!isEluxComponent(component) && (typeof component !== 'function' || component.length > 0 || !/(import|require)\s*\(/.test(component.toString()))) {
-      env.console.warn(`The exported component must implement interface EluxComponent: ${moduleName}.${key}`);
+    if (!isKAFComponent(component) && (typeof component !== 'function' || component.length > 0 || !/(import|require)\s*\(/.test(component.toString()))) {
+      env.console.warn(`The exported component must implement interface KAFComponent: ${moduleName}.${key}`);
     }
   });
   return {
@@ -1111,7 +1111,7 @@ function modelHotReplacement(moduleName, ModelClass) {
     });
   }
 
-  env.console.log(`[HMR] @Elux Updated model: ${moduleName}`);
+  env.console.log(`[HMR] @KAF Updated model: ${moduleName}`);
 }
 
 var _class;
@@ -1278,10 +1278,10 @@ function buildSSR(ins, router, routerOptions) {
       return router.init(routerOptions, {}).then(() => {
         const store = router.getActivePage().store;
         store.destroy();
-        const eluxContext = {
+        const KAFContext = {
           router
         };
-        return AppRender.toString(id, eluxContext, ins).then(html => {
+        return AppRender.toString(id, KAFContext, ins).then(html => {
           const {
             SSRTPL,
             SSRDataKey
@@ -1621,8 +1621,8 @@ function nativeUrlToUrl(nativeUrl) {
   const pathname = coreConfig.NativePathnameMapping.in('/' + path.replace(/^\/|\/$/g, ''));
   return `${pathname}${search ? `?${search}` : ''}${hash ? `#${hash}` : ''}`;
 }
-function urlToNativeUrl(eluxUrl) {
-  const [path = '', search = '', hash = ''] = eluxUrl.split(/[?#]/);
+function urlToNativeUrl(kafUrl) {
+  const [path = '', search = '', hash = ''] = kafUrl.split(/[?#]/);
   const pathname = coreConfig.NativePathnameMapping.out('/' + path.replace(/^\/|\/$/g, ''));
   return `${pathname}${search ? `?${search}` : ''}${hash ? `#${hash}` : ''}`;
 }

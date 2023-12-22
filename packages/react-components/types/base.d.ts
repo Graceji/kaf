@@ -1,4 +1,4 @@
-import { KAFContext, IRouter } from '@kaf/core';
+import { IRouter, KAFContext } from '@aimkaf/core';
 export declare const KAFContextComponent: import("react").Context<KAFContext>;
 export declare function UseRouter(): IRouter;
 export declare const reactComponentsConfig: {

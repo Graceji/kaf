@@ -20,4 +20,4 @@ export const Else = ({
     children: elseView
   });
 };
-Else.displayName = 'EluxElse';
+Else.displayName = 'KAFElse';

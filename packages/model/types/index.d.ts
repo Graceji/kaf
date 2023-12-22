@@ -1,2 +1,2 @@
-export * from '@kaf/app';
+export * from '@aimkaf/app';
 //# sourceMappingURL=index.d.ts.map

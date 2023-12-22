@@ -37,7 +37,7 @@ View就是一个包含具体业务逻辑的Component，View中可以直接使用
 
     ```ts
     // src/modules/article/views/Main.tsx
-    import {connectStore} from '@elux/vue-web';
+    import {connectStore} from '@aimkaf/vue-web';
     import {APPState} from '@/Global';
 
     export interface StoreProps {

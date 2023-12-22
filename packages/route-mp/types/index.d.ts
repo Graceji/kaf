@@ -1,4 +1,4 @@
-import { BaseNativeRouter, IRouter, Location } from '@kaf/core';
+import { BaseNativeRouter, IRouter, Location } from '@aimkaf/core';
 interface RouteOption {
     url: string;
 }

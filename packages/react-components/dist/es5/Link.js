@@ -1,7 +1,7 @@
 import _extends from "@babel/runtime/helpers/esm/extends";
 import _objectWithoutPropertiesLoose from "@babel/runtime/helpers/esm/objectWithoutPropertiesLoose";
 var _excluded = ["to", "cname", "action", "onClick", "disabled", "overflowRedirect", "target", "refresh"];
-import { coreConfig, urlToNativeUrl } from '@elux/core';
+import { coreConfig, urlToNativeUrl } from '@aimkaf/core';
 import { useCallback, useMemo, useRef } from 'react';
 import { jsx as _jsx } from "react/jsx-runtime";
 export var Link = function Link(_ref) {
@@ -88,4 +88,4 @@ export var Link = function Link(_ref) {
     return _jsx("a", _extends({}, props));
   }
 };
-Link.displayName = 'EluxLink';
+Link.displayName = 'KAFLink';

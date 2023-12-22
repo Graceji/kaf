@@ -1,28 +1,28 @@
-import { env } from '@elux/core';
-import { EluxContextComponent, reactComponentsConfig } from './base';
+import { env } from '@aimkaf/core';
+import { KAFContextComponent, reactComponentsConfig } from './base';
 import { RouterComponent } from './Router';
 import { jsx as _jsx } from "react/jsx-runtime";
 const AppRender = {
-  toDocument(id, eluxContext, fromSSR, app) {
+  toDocument(id, KAFContext, fromSSR, app) {
     const renderFun = fromSSR ? reactComponentsConfig.hydrate : reactComponentsConfig.render;
     const panel = env.document.getElementById(id);
-    renderFun(_jsx(EluxContextComponent.Provider, {
-      value: eluxContext,
+    renderFun(_jsx(KAFContextComponent.Provider, {
+      value: KAFContext,
       children: _jsx(RouterComponent, {})
     }), panel);
   },
 
-  toString(id, eluxContext, app) {
-    const html = reactComponentsConfig.renderToString(_jsx(EluxContextComponent.Provider, {
-      value: eluxContext,
+  toString(id, KAFContext, app) {
+    const html = reactComponentsConfig.renderToString(_jsx(KAFContextComponent.Provider, {
+      value: KAFContext,
       children: _jsx(RouterComponent, {})
     }));
     return Promise.resolve(html);
   },
 
-  toProvider(eluxContext, app) {
-    return props => _jsx(EluxContextComponent.Provider, {
-      value: eluxContext,
+  toProvider(KAFContext, app) {
+    return props => _jsx(KAFContextComponent.Provider, {
+      value: KAFContext,
       children: props.children
     });
   }

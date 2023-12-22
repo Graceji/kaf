@@ -1,4 +1,4 @@
-import { coreConfig } from '@elux/core';
+import { coreConfig } from '@aimkaf/core';
 import { memo, useMemo } from 'react';
 
 var Component = function Component(_ref) {
@@ -22,5 +22,5 @@ var Component = function Component(_ref) {
   return null;
 };
 
-Component.displayName = 'EluxDocumentHead';
+Component.displayName = 'KAFDocumentHead';
 export var DocumentHead = memo(Component);

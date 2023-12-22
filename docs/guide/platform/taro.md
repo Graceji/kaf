@@ -20,10 +20,11 @@ Taro官方提供了各种小程序的开发脚手架，将Elux作为一个普通
 
 1. 修改入口文件app.tsx
 <CodeGroup>
+
   <CodeGroupItem title="React" active>
 
 ```ts
-import {createApp} from '@elux/react-taro';
+import {createApp} from '@aimkaf/react-taro';
 import {appConfig} from './Project';
 
 function App(props: any) {
@@ -39,7 +40,7 @@ export default App;
   <CodeGroupItem title="Vue">
 
 ```ts
-import {createApp} from '@elux/vue-taro';
+import {createApp} from '@aimkaf/vue-taro';
 import {appConfig} from './Project';
 
 const App = createApp(appConfig);
@@ -96,7 +97,7 @@ export const appConfig: AppConfig = setConfig({
 小程序专用page文件，其实千篇一律，只需要导出EluxPage即可：
 
 ```ts
-import {EluxPage} from '@elux/react-taro';
+import {EluxPage} from '@aimkaf/react-taro';
 
 //Taro提供的配置页面方法
 definePageConfig({
@@ -212,7 +213,7 @@ Cli工程向导中的Taro项目模版基于`Taro特定版本`制作，开箱即�
       },
       "dependencies": {
         //...
-        "@elux/react-taro": "^2.0.0",
+        "@aimkaf/react-taro": "^2.0.0",
         "path-to-regexp": "^3.0.0" //taro中只能使用v3版本
       },
       "devDependencies": {
