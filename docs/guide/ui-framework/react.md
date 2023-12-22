@@ -10,7 +10,7 @@ prev: /guide/basics/immutable.html
 
 ```ts
 // src/modules/article/views/Main.tsx
-import {connectStore} from '@kaf/react-web';
+import {connectStore} from '@aimkaf/react-web';
 import {APPState, useStore, useRouter} from '@/Global';
 
 export interface StoreProps {

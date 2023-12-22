@@ -7,7 +7,7 @@ next: /guide/ui-framework/react.html
 数据管理本质上分为2大类：`Mutable(可变数据)`与`Immutable(不可变数据)`，Elux同时支持2种模式。
 
 ```ts
-import {setCoreConfig} from '@kaf/core';
+import {setCoreConfig} from '@aimkaf/core';
 
 //设置当前数据管理模式为可变数据模式
 setCoreConfig({

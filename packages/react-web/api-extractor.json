@@ -8,7 +8,7 @@
 
   "mainEntryPointFilePath": "<projectFolder>/types/index.d.ts",
 
-  "bundledPackages": ["@kaf/core", "@kaf/route-browser", "@kaf/app", "@kaf/react-components", "@kaf/react-redux"],
+  "bundledPackages": ["@aimkaf/core", "@aimkaf/route-browser", "@aimkaf/app", "@aimkaf/react-components", "@aimkaf/react-redux"],
 
   "compiler": {
     "tsconfigFilePath": "src/tsconfig.json"

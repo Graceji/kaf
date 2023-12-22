@@ -1,4 +1,4 @@
-import {coreConfig, env, IStore, Location} from '@kaf/core';
+import {coreConfig, env, IStore, Location} from '@aimkaf/core';
 import {FC, memo, useEffect, useRef, useState} from 'react';
 import {EWindow} from './EWindow';
 

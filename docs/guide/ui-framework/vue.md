@@ -17,7 +17,7 @@ Elux没有挂载任何全局变量，获取Store请使用`useStore()`，获取St
 
 ```ts
 // src/modules/article/views/Main.tsx
-import {connectStore} from '@kaf/vue-web';
+import {connectStore} from '@aimkaf/vue-web';
 import {APPState, useStore, useRouter} from '@/Global';
 import {defineComponent} from 'vue';
 

@@ -1,4 +1,4 @@
-import {Dispatch, exportView, KAFComponent, setCoreConfig} from '@kaf/core';
+import {Dispatch, exportView, KAFComponent, setCoreConfig} from '@aimkaf/core';
 import {ComponentClass, ComponentType, FunctionComponent} from 'react';
 import {connect, Provider, useStore} from 'react-redux';
 import type {ConnectOptions} from 'react-redux/es/components/connect';

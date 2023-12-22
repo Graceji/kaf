@@ -8,7 +8,7 @@
 
   "mainEntryPointFilePath": "<projectFolder>/types/index.d.ts",
 
-  "bundledPackages": ["@kaf/core", "@kaf/app"],
+  "bundledPackages": ["@aimkaf/core", "@aimkaf/app"],
 
   "compiler": {
     "tsconfigFilePath": "src/tsconfig.json"

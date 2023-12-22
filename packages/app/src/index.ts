@@ -1,4 +1,4 @@
-import {getModuleApiMap, ModuleGetter, setCoreConfig, StoreLogger, StoreMiddleware} from '@kaf/core';
+import {getModuleApiMap, ModuleGetter, setCoreConfig, StoreLogger, StoreMiddleware} from '@aimkaf/core';
 
 export {
   BaseModel,
@@ -27,7 +27,7 @@ export {
   setLoading,
   urlToLocation,
   urlToNativeUrl,
-} from '@kaf/core';
+} from '@aimkaf/core';
 
 export type {
   Action,
@@ -72,7 +72,7 @@ export type {
   StoreState,
   UNListener,
   VStore,
-} from '@kaf/core';
+} from '@aimkaf/core';
 
 /**
  * 全局参数设置

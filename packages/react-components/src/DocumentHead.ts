@@ -1,4 +1,4 @@
-import {coreConfig} from '@kaf/core';
+import {coreConfig} from '@aimkaf/core';
 import {FC, memo, useMemo} from 'react';
 
 /**

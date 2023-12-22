@@ -1,4 +1,4 @@
-import {buildConfigSetter, KAFContext, env, IRouter} from '@kaf/core';
+import {buildConfigSetter, env, IRouter, KAFContext} from '@aimkaf/core';
 import {createContext, useCallback, useContext, useEffect, useRef} from 'react';
 
 export const KAFContextComponent = createContext<KAFContext>({router: null as any});

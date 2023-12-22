@@ -12,7 +12,7 @@ View就是一个包含具体业务逻辑的Component，View中可以直接使用
 
     ```ts
     // src/modules/article/views/Main.tsx
-    import {connectStore} from '@kaf/react-web';
+    import {connectStore} from '@aimkaf/react-web';
     import {APPState} from '@/Global';
 
     export interface StoreProps {
@@ -74,7 +74,7 @@ View就是一个包含具体业务逻辑的Component，View中可以直接使用
 
 ```ts
 // src/modules/stage/index.ts
-import {exportModule} from '@kaf/react-web';
+import {exportModule} from '@aimkaf/react-web';
 import {Model} from './model';
 import main from './views/Main';
 
@@ -87,7 +87,7 @@ export default exportModule('stage', Model, {main});
 
 ```ts
 // src/modules/stage/index.ts
-import {exportModule} from '@kaf/react-web';
+import {exportModule} from '@aimkaf/react-web';
 import {Model} from './model';
 // import main from './views/Main';
 

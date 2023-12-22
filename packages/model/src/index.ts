@@ -1,1 +1,1 @@
-export * from '@kaf/app';
+export * from '@aimkaf/app';

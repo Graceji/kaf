@@ -1,4 +1,4 @@
-import {coreConfig, getEntryComponent, IStore} from '@kaf/core';
+import {coreConfig, getEntryComponent, IStore} from '@aimkaf/core';
 import {FC, memo} from 'react';
 
 const Component: FC<{store: IStore}> = function ({store}) {

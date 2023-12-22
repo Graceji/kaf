@@ -35,7 +35,7 @@ export interface CommonModel {
     ```ts
     // src/modules/stage/model.ts
     import {pathToRegexp} from 'path-to-regexp';
-    import {BaseModel, ErrorCodes, LoadingState, effect, reducer} from '@kaf/react-web';
+    import {BaseModel, ErrorCodes, LoadingState, effect, reducer} from '@aimkaf/react-web';
     import {APPState} from '@/Global';
 
     //定义本模块的状态结构
@@ -148,7 +148,7 @@ export interface CommonModel {
 
     ```ts
     // src/modules/stage/index.ts
-    import {exportModule} from '@kaf/react-web';
+    import {exportModule} from '@aimkaf/react-web';
     import {Model} from './model';
     import main from './views/Main';
 

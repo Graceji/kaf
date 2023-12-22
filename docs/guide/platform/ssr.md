@@ -43,7 +43,7 @@ Elux不仅支持SSR(服务器渲染)，更强大的是：
 
    ```ts
    // src/server.ts
-   import {createSSR} from '@kaf/react-web';
+   import {createSSR} from '@aimkaf/react-web';
    import {appConfig} from './Project';
 
    /**

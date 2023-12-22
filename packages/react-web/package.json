@@ -1,5 +1,5 @@
 {
-  "name": "@kaf/react-web",
+  "name": "@aimkaf/react-web",
   "version": "2.6.6",
   "description": "The practice of kaf on react-web",
   "repository": "https://github.com/Graceji/kaf/tree/main/packages/react-web",
@@ -34,22 +34,22 @@
     "build": "yarn build:types && rimraf ./dist && yarn package:es6 && yarn package:es5"
   },
   "externals": {
-    "@kaf/core": true,
+    "@aimkaf/core": true,
     "react": true,
     "react-dom": true,
     "react-redux": true,
-    "@kaf/react-web/server": true
+    "@aimkaf/react-web/server": true
   },
   "peerDependencies": {
     "react": "^16.8.0 || ^17 || ^18",
     "react-dom": "^16.8.0 || ^17 || ^18"
   },
   "dependencies": {
-    "@kaf/app": "^2.6.6",
-    "@kaf/core": "^2.6.6",
-    "@kaf/react-components": "^2.6.6",
-    "@kaf/react-redux": "^2.6.6",
-    "@kaf/route-browser": "^2.6.6"
+    "@aimkaf/app": "^2.6.6",
+    "@aimkaf/core": "^2.6.6",
+    "@aimkaf/react-components": "^2.6.6",
+    "@aimkaf/react-redux": "^2.6.6",
+    "@aimkaf/route-browser": "^2.6.6"
   },
-  "gitHead": "ad2ffab42fef29ba9f2bc0c9a1a81cd08d794794"
+  "gitHead": "1236156092a91dddb54d12dfbd76d6e3620d70c5"
 }

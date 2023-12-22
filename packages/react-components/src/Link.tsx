@@ -1,4 +1,4 @@
-import {coreConfig, IRouteRecord, Location, RouteAction, RouteTarget, urlToNativeUrl} from '@kaf/core';
+import {coreConfig, IRouteRecord, Location, RouteAction, RouteTarget, urlToNativeUrl} from '@aimkaf/core';
 import {FC, HTMLAttributes, MouseEvent, useCallback, useMemo, useRef} from 'react';
 
 /**

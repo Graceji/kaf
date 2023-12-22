@@ -8,14 +8,14 @@
   <a href="https://www.npmjs.com/package/@elux/cli">
     <img src="https://img.shields.io/node/v/@elux/cli.svg?style=flat-square" />
   </a>
-  <a href="https://www.npmjs.com/package/@kaf/core">
-    <img src="https://img.shields.io/npm/v/@kaf/core.svg?style=flat-square" />
+  <a href="https://www.npmjs.com/package/@aimkaf/core">
+    <img src="https://img.shields.io/npm/v/@aimkaf/core.svg?style=flat-square" />
   </a>
-  <a href="https://www.npmjs.com/package/@kaf/core">
-    <img src="https://img.shields.io/npm/l/@kaf/core.svg?style=flat-square" />
+  <a href="https://www.npmjs.com/package/@aimkaf/core">
+    <img src="https://img.shields.io/npm/l/@aimkaf/core.svg?style=flat-square" />
   </a>
-  <a href="https://www.npmjs.com/package/@kaf/core">
-    <img src="https://img.shields.io/npm/dt/@kaf/core.svg?style=flat-square" />
+  <a href="https://www.npmjs.com/package/@aimkaf/core">
+    <img src="https://img.shields.io/npm/dt/@aimkaf/core.svg?style=flat-square" />
   </a>
   <p></p>
   <p>

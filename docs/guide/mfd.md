@@ -55,7 +55,7 @@ src
   "main": "index.ts",
   "peerDependencies": {
     "@test-project/stage": "*",
-    "@kaf/react-web": "*",
+    "@aimkaf/react-web": "*",
     "react": "*",
     "path-to-regexp": "*"
   }
@@ -238,7 +238,7 @@ app-runtime-team工程结构与`app-build-team`基本一致，稍有变动如下
     shared: {
       'react': {singleton: true, eager: true, requiredVersion: '*'},
       'react-dom': {singleton: true, eager: true, requiredVersion: '*'},
-      '@kaf/react-web': {singleton: true, eager: true, requiredVersion: '*'},
+      '@aimkaf/react-web': {singleton: true, eager: true, requiredVersion: '*'},
     },
   },
 }

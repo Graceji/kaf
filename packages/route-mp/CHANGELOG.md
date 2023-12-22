@@ -5,12 +5,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [2.6.6](https://github.com/Graceji/kaf/compare/v2.6.5...v2.6.6) (2023-12-19)
 
-**Note:** Version bump only for package @kaf/route-mp
+**Note:** Version bump only for package @aimkaf/route-mp
 
 ## [2.6.5](https://github.com/Graceji/kaf/compare/v2.6.4...v2.6.5) (2023-12-19)
 
-**Note:** Version bump only for package @kaf/route-mp
+**Note:** Version bump only for package @aimkaf/route-mp
 
 ## [2.6.4](https://github.com/Graceji/kaf/compare/v2.6.3...v2.6.4) (2023-12-19)
 
-**Note:** Version bump only for package @kaf/route-mp
+**Note:** Version bump only for package @aimkaf/route-mp

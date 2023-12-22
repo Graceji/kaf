@@ -113,7 +113,7 @@ Router的创建与销毁由框架自动完成，无需干预。
 - Url转换为Location：
 
   ```ts
-  import {urlToLocation} from '@kaf/react-web';
+  import {urlToLocation} from '@aimkaf/react-web';
 
   const location = urlToLocation('/article/list?currentPage=1&pageSize=10&__c=dialog#summary', {aaa: 111});
 
@@ -134,7 +134,7 @@ Router的创建与销毁由框架自动完成，无需干预。
 - Location转换为Url，只需提供部分路由信息即可：
 
   ```ts
-  import {locationToUrl} from '@kaf/react-web';
+  import {locationToUrl} from '@aimkaf/react-web';
 
   const url = locationToUrl({
     pathname: '/article/list',

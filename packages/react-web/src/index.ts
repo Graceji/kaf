@@ -1,19 +1,19 @@
 import {hydrate, render} from 'react-dom';
 
-import {AppConfig} from '@kaf/app';
-import {buildApp, buildSSR, env, RenderOptions, RouterInitOptions} from '@kaf/core';
-import {setReactComponentsConfig} from '@kaf/react-components';
+import {AppConfig} from '@aimkaf/app';
+import {buildApp, buildSSR, env, RenderOptions, RouterInitOptions} from '@aimkaf/core';
+import {setReactComponentsConfig} from '@aimkaf/react-components';
 // eslint-disable-next-line import/no-extraneous-dependencies
-import {renderToString} from '@kaf/react-web/server';
-import {createClientRouter, createServerRouter} from '@kaf/route-browser';
+import {renderToString} from '@aimkaf/react-web/server';
+import {createClientRouter, createServerRouter} from '@aimkaf/route-browser';
 
-export {DocumentHead, Else, Link, Switch} from '@kaf/react-components';
-export type {DocumentHeadProps, ElseProps, LinkProps, SwitchProps} from '@kaf/react-components';
+export {DocumentHead, Else, Link, Switch} from '@aimkaf/react-components';
+export type {DocumentHeadProps, ElseProps, LinkProps, SwitchProps} from '@aimkaf/react-components';
 
-export {connectRedux, connectStore, createSelectorHook, shallowEqual, useSelector} from '@kaf/react-redux';
-export type {GetProps, InferableComponentEnhancerWithProps} from '@kaf/react-redux';
+export {connectRedux, connectStore, createSelectorHook, shallowEqual, useSelector} from '@aimkaf/react-redux';
+export type {GetProps, InferableComponentEnhancerWithProps} from '@aimkaf/react-redux';
 
-export * from '@kaf/app';
+export * from '@aimkaf/app';
 
 setReactComponentsConfig({
   hydrate,

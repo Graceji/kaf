@@ -85,7 +85,7 @@ Elux 最低可以兼容到 IE10，但需要特别处理：
 module.exports = {
   prod: {
     resolveAlias: {
-      '@kaf/react-web': '@kaf/react-web/dist/es5/pkg.js'
+      '@aimkaf/react-web': '@aimkaf/react-web/dist/es5/pkg.js'
     }
   }
 }

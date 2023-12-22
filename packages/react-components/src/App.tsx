@@ -1,4 +1,4 @@
-import {env, IAppRender} from '@kaf/core';
+import {env, IAppRender} from '@aimkaf/core';
 import {KAFContextComponent, reactComponentsConfig} from './base';
 import {RouterComponent} from './Router';
 

@@ -1,4 +1,4 @@
-import {coreConfig, env, ILoadComponent, injectComponent, isPromise} from '@kaf/core';
+import {coreConfig, env, ILoadComponent, injectComponent, isPromise} from '@aimkaf/core';
 import {forwardRef, useCallback, useEffect, useMemo, useRef, useState} from 'react';
 
 export const LoadComponentOnError: KAF.Component<{message: string}> = ({message}: {message: string}) => (

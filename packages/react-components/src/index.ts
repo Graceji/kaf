@@ -1,4 +1,4 @@
-import {setCoreConfig} from '@kaf/core';
+import {setCoreConfig} from '@aimkaf/core';
 
 import AppRender from './App';
 import {UseRouter} from './base';

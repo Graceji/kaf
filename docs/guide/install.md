@@ -58,12 +58,12 @@ Cli工程模版制作可能稍滞后于Git项目本身，另外对于优质的�
 - 选择一个`elux组合包`，当作普通npm依赖安装：
 
   ```bash
-  yarn add @kaf/react-web
+  yarn add @aimkaf/react-web
   ```
 
   根据平台和UI框架不同，目前推出5种组合包，它们基本保持一致的API：
 
-  - [@kaf/react-web](/api/react-web.html)
+  - [@aimkaf/react-web](/api/react-web.html)
   - [@elux/react-taro](/api/react-taro.html)
   - [@elux/vue-web](/api/vue-web.html)
   - [@elux/vue-taro](/api/vue-taro.html)

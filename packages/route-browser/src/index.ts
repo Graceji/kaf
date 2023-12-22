@@ -1,4 +1,4 @@
-import {BaseNativeRouter, coreConfig, env, IRouter, Location, setCoreConfig, UNListener} from '@kaf/core';
+import {BaseNativeRouter, coreConfig, env, IRouter, Location, setCoreConfig, UNListener} from '@aimkaf/core';
 
 setCoreConfig({NotifyNativeRouter: {window: true, page: true}});
 

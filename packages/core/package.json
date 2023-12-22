@@ -1,5 +1,5 @@
 {
-  "name": "@kaf/core",
+  "name": "@aimkaf/core",
   "version": "2.6.6",
   "description": "Cross platform and cross framework web solutions that based on micro-module and model-driven.",
   "homepage": "https://github.com/Graceji/kaf/tree/main/packages/core",
@@ -38,5 +38,5 @@
     "package:es5": "cross-env NODE_TAG=es5 rollup -c",
     "build": "yarn build:types && rimraf ./dist && yarn package:es6 && yarn package:es5"
   },
-  "gitHead": "ad2ffab42fef29ba9f2bc0c9a1a81cd08d794794"
+  "gitHead": "1236156092a91dddb54d12dfbd76d6e3620d70c5"
 }

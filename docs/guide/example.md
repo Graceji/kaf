@@ -195,7 +195,7 @@ export class Model extends BaseModel<ModuleState, APPState> {
 ```ts
 //src/modules/article/index.ts
 
-import {exportModule} from '@kaf/react-web';
+import {exportModule} from '@aimkaf/react-web';
 import {Model} from './model';
 import main from './views/Main';
 

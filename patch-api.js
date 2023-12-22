@@ -5,11 +5,11 @@ const indexPage = `# API手册V2.0
 
 根据UI框架和运行环境的不同，请使用不同的Package：
 
-- [@kaf/react-web](./react-web.md)
-- [@kaf/react-taro](./react-taro.md)
-- [@kaf/vue-web](./vue-web.md)
-- [@kaf/vue-taro](./vue-taro.md)
-- [@kaf/model](./model.md)
+- [@aimkaf/react-web](./react-web.md)
+- [@aimkaf/react-taro](./react-taro.md)
+- [@aimkaf/vue-web](./vue-web.md)
+- [@aimkaf/vue-taro](./vue-taro.md)
+- [@aimkaf/model](./model.md)
 `;
 replace.sync({
   files: './api/api/index.md',
