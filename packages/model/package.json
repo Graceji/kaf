@@ -1,6 +1,6 @@
 {
   "name": "@aimkaf/model",
-  "version": "2.6.7",
+  "version": "2.6.8",
   "description": "The practice of kaf on model",
   "repository": "https://github.com/Graceji/kaf/tree/main/packages/model",
   "author": "Graceji",
@@ -32,8 +32,8 @@
     "@aimkaf/core": true
   },
   "dependencies": {
-    "@aimkaf/app": "^2.6.7",
-    "@aimkaf/core": "^2.6.7"
+    "@aimkaf/app": "^2.6.8",
+    "@aimkaf/core": "^2.6.8"
   },
   "gitHead": "1236156092a91dddb54d12dfbd76d6e3620d70c5"
 }
